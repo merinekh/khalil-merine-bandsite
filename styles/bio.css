@@ -1,16 +1,16 @@
 @font-face {
   font-family: "Avenir next";
-  src: url(../../assets/fonts/AvenirNextLTPro-Regular.otf);
+  src: url(../../assets/fonts/AvenirNextLTPro-Regular.otf) format("ttf");
   font-weight: 400;
 }
 @font-face {
   font-family: "Avenir next";
-  src: url(../../assets/fonts/AvenirNextLTPro-Demi.otf);
+  src: url(../../assets/fonts/AvenirNextLTPro-Demi.otf) format("ttf");
   font-weight: 600;
 }
 @font-face {
   font-family: "Avenir next";
-  src: url(../../assets/fonts/AvenirNextLTPro-Bold.otf);
+  src: url(../../assets/fonts/AvenirNextLTPro-Bold.otf) format("ttf");
   font-weight: 700;
 }
 *,
@@ -69,19 +69,22 @@ p {
   justify-content: center;
   align-items: center;
   background-color: #323232;
-  padding: 2rem 1.6rem 0 1.6rem;
+  padding: 2rem 0 0 0;
 }
 .header .navbar {
   display: flex;
   justify-content: center;
   width: 100%;
-  padding: 2rem 1.6rem 1rem 1.6rem;
+  padding: 2rem 0 0 0;
 }
 .header .navbar__link {
   display: flex;
   justify-content: center;
   width: 50%;
   color: #afafaf;
+}
+.header .navbar__link--border {
+  border-bottom: 0.5rem solid #ffffff;
 }
 
 .main {
@@ -94,6 +97,8 @@ p {
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
+  margin: 7rem 0;
+  background-color: rgba(225, 225, 225, 0.8);
 }
 .main__title {
   display: flex;

@@ -10,20 +10,25 @@
     justify-content: center;
     align-items: center;
     background-color: $color--primary-black;
-    padding: 2rem 1.6rem 0 1.6rem;
+    padding: 2rem 0 0 0;
 
     .navbar {
         display: flex;
         justify-content: center;
         width: 100%;
-        padding: 2rem 1.6rem 1rem 1.6rem;
+        padding: 2rem 0 0 0;
 
         &__link {
             display: flex;
             justify-content: center;
             width: 50%;
             color: $color--primary-silver;
+            
+            &--border {
+                border-bottom: .5rem solid $color--primary-white;
+            }
         }
+
     }
 
 }
@@ -36,6 +41,8 @@
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
+    margin: 7rem 0;
+    background-color: rgba($color: $color--secondary-silver, $alpha: .8);
 
     &__title{
         display: flex;
