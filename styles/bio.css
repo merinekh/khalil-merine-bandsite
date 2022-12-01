@@ -1,1 +1,150 @@
-/*# sourceMappingURL=bio.css.map */
+@font-face {
+  font-family: "Avenir next";
+  src: url(../../assets/fonts/AvenirNextLTPro-Regular.otf);
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Avenir next";
+  src: url(../../assets/fonts/AvenirNextLTPro-Demi.otf);
+  font-weight: 600;
+}
+@font-face {
+  font-family: "Avenir next";
+  src: url(../../assets/fonts/AvenirNextLTPro-Bold.otf);
+  font-weight: 700;
+}
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6rem;
+  font-family: "Avenir next";
+  min-width: 32rem;
+  max-width: 76.7rem;
+  margin: 0;
+  padding: 0;
+  background-color: #ffffff;
+}
+
+* a, li {
+  text-decoration: none;
+  list-style: none;
+  color: #ffffff;
+}
+
+h1 {
+  font-size: 2.4rem;
+  line-height: 3.2rem;
+  font-weight: 700;
+}
+
+h2 {
+  font-size: 2.4rem;
+  line-height: 3.2rem;
+  font-weight: 700;
+}
+
+h3 {
+  font-size: 1.4rem;
+  line-height: 2.2rem;
+  font-weight: 600;
+}
+
+p {
+  font-size: 1.3rem;
+  line-height: 1.8rem;
+  font-weight: 400;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #323232;
+  padding: 2rem 1.6rem 0 1.6rem;
+}
+.header .navbar {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding: 2rem 1.6rem 1rem 1.6rem;
+}
+.header .navbar__link {
+  display: flex;
+  justify-content: center;
+  width: 50%;
+  color: #afafaf;
+}
+
+.main {
+  width: 100%;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+.main__title {
+  display: flex;
+  justify-content: center;
+  margin-left: 2rem;
+  font-size: 2.4rem;
+  color: #ffffff;
+  z-index: 1;
+}
+.main__image {
+  position: absolute;
+  width: 100%;
+  background-color: black;
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  padding: 2.4rem 1.6rem 1.6rem 1.6rem;
+}
+.section__image {
+  width: 100%;
+}
+
+.gallery {
+  display: flex;
+  flex-direction: column;
+  padding: 2.4rem 1.6rem 1.6rem 1.6rem;
+  background-color: rgba(225, 225, 225, 0.2);
+}
+.gallery__image {
+  width: 100%;
+  margin: 1rem 0;
+}
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  background-color: #323232;
+  padding: 0 1.6rem;
+  color: #ffffff;
+}
+.footer-social {
+  display: flex;
+}
+.footer-social__logo {
+  margin-right: 2rem;
+}
+.footer-cards div {
+  padding: 1rem 0;
+}
+.footer__image {
+  padding-top: 2rem;
+}/*# sourceMappingURL=bio.css.map */

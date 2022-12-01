@@ -1,0 +1,50 @@
+@use './fonts' as *;
+@use './variables' as *;
+
+*,
+*::before,
+*::after{
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-size: 1.6rem;
+    font-family: 'Avenir next';
+    min-width: 32rem;
+    max-width: 76.7rem;
+    margin: 0;
+    padding: 0;
+    background-color: $color--primary-white ;
+}
+
+* a,li{
+    text-decoration: none;
+    list-style: none;
+    color: $color--primary-white;
+}
+
+h1 {
+    font-size: 2.4rem;
+    line-height: 3.2rem;
+    font-weight: 700;
+}
+h2 {
+    font-size: 2.4rem;
+    line-height: 3.2rem;
+    font-weight: 700;
+}
+h3 {
+    font-size: 1.4rem;
+    line-height: 2.2rem;
+    font-weight: 600;
+}
+
+p {
+    font-size: 1.3rem;
+    line-height: 1.8rem;
+    font-weight: 400;
+}

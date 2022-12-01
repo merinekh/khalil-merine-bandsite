@@ -1,0 +1,99 @@
+@use 'partials/fonts' as *;
+@use 'partials/variables' as *;
+@use 'partials/mixins' as *;
+@use 'partials/reset' as *;
+
+
+.header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: $color--primary-black;
+    padding: 2rem 1.6rem 0 1.6rem;
+
+    .navbar {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        padding: 2rem 1.6rem 1rem 1.6rem;
+
+        &__link {
+            display: flex;
+            justify-content: center;
+            width: 50%;
+            color: $color--primary-silver;
+        }
+    }
+
+}
+
+.main {
+    width: 100%;
+    height: fit-content;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+
+    &__title{
+        display: flex;
+        justify-content: center;
+        margin-left: 2rem;
+        font-size: 2.4rem;
+        color: $color--primary-white;
+        z-index: 1;
+    }
+
+    &__image{
+        position: absolute;
+        width: 100%;
+        background-color: rgba($color: #000000, $alpha: 1.0);
+    }
+}
+
+.section {
+    display: flex;
+    flex-direction: column;
+    padding: 2.4rem 1.6rem 1.6rem 1.6rem;
+
+    &__image {
+        width: 100%;
+    }
+}
+
+.gallery {
+    display: flex;
+    flex-direction: column;
+    padding: 2.4rem 1.6rem 1.6rem 1.6rem;
+    background-color:rgba($color: $color--secondary-silver, $alpha: .2);
+
+    &__image{
+        width: 100%;
+        margin: 1rem 0;
+    }
+}
+
+.footer{
+    display: flex;
+    flex-direction: column;
+    background-color: $color--primary-black;
+    padding: 0 1.6rem;
+    color: $color--primary-white;
+
+    &-social {
+        display: flex;
+        
+        &__logo{
+            margin-right: 2rem;
+        }   
+    }
+
+    &-cards div{
+        padding: 1rem 0;
+    }
+    &__image {
+        padding-top: 2rem;
+    }
+}
