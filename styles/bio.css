@@ -50,7 +50,7 @@ h1 {
   h1 {
     font-size: 6rem;
     line-height: 6.8rem;
-    font-weight: 600;
+    font-weight: 500;
   }
 }
 
@@ -221,10 +221,10 @@ p {
   .gallery-images {
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-between;
   }
   .gallery__image {
-    width: 20%;
-    margin: 2rem;
+    width: 31%;
   }
 }
 
@@ -249,6 +249,25 @@ p {
 }
 @media screen and (min-width: 32rem) {
   .footer {
+    display: flex;
     padding: 2.4rem;
+    flex-direction: column;
+    position: relative;
+  }
+  .footer-cards {
+    display: flex;
+    justify-content: space-between;
+  }
+  .footer-card__name {
+    font-size: 1.6rem;
+  }
+  .footer-image {
+    position: absolute;
+    top: 13%;
+    right: 12%;
+    scale: 2;
+  }
+  .footer__copy {
+    padding: 2.4rem 0;
   }
 }/*# sourceMappingURL=bio.css.map */

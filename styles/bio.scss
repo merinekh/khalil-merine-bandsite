@@ -140,11 +140,11 @@
         &-images{
             display: flex;
             flex-wrap: wrap;
+            justify-content: space-between;
         }
 
         &__image{
-            width: 27.7%%;
-            margin: 2rem;
+            width: 31%;
         }
     }
 }
@@ -172,6 +172,29 @@
     }
 
     @include tablet{
+        display: flex;
         padding: 2.4rem;
+        flex-direction: column;
+        position: relative;
+
+        &-cards {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        &-card__name {
+            font-size: 1.6rem;
+        }
+
+        &-image {
+            position: absolute;
+            top: 13%;
+            right: 12%;
+            scale: 2;
+        }
+
+        &__copy {
+            padding: 2.4rem 0;
+        }
     }
 }
