@@ -1,7 +1,7 @@
 @use 'variables' as *;
 
 @mixin tablet {
-  @media screen and (min-width: $mobile-breakpoint) {
+  @media screen and (min-width: $tablet-breakpoint) {
     @content;
   }
 }

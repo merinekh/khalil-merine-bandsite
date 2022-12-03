@@ -18,11 +18,16 @@ body {
     flex-direction: column;
     font-size: 1.6rem;
     font-family: 'Avenir next';
-    min-width: 32rem;
-    max-width: 76.7rem;
     margin: 0;
     padding: 0;
     background-color: $color--primary-white ;
+
+
+    @include desktop {
+        min-width: 128rem;
+        max-width: none;
+        margin: 0 AUTO;
+    }
 }
 
 * a,li{
