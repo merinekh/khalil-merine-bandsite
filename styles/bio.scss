@@ -57,7 +57,7 @@
     height: 25vh;
 
     @include tablet{
-        height: 70vh;
+        height: 60vh;
         background-position: cover;
     }
 
@@ -168,7 +168,7 @@
         padding: 1.6rem 0 0 0;
     }
     &__image {
-        padding-top: 2rem;
+        padding-top: 1.6rem;
     }
 
     @include tablet{

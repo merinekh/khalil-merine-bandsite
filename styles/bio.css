@@ -146,7 +146,7 @@ p {
 }
 @media screen and (min-width: 32rem) {
   .main {
-    height: 70vh;
+    height: 60vh;
     background-position: cover;
   }
 }
@@ -245,7 +245,7 @@ p {
   padding: 1.6rem 0 0 0;
 }
 .footer__image {
-  padding-top: 2rem;
+  padding-top: 1.6rem;
 }
 @media screen and (min-width: 32rem) {
   .footer {
