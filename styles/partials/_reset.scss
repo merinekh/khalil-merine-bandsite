@@ -14,15 +14,18 @@ html {
 }
 
 body {
-    display: flex;
-    flex-direction: column;
-    font-size: 1.2rem;
-    font-family: 'Avenir next';
-    margin: 0;
-    padding: 0;
-    background-color: $color--primary-white ;
-    width: 100vw;
+    @include mobile{
+        display: flex;
+        flex-direction: column;
+        font-size: 1.2rem;
+        font-family: 'Avenir next';
+        margin: 0;
+        padding: 0;
+        background-color: $color--primary-white ;
+        width: 100vw;
+    }
 }
+    
 
 * a,li{
     text-decoration: none;
