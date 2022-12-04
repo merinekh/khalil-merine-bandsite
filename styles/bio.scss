@@ -5,84 +5,129 @@
 
 
 .header {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    
     background-color: $color--primary-black;
-    padding: 2rem 0 0 0;
-
-    .navbar {
+    &-items{
         display: flex;
+        flex-direction: column;
         justify-content: center;
-        width: 100%;
+        align-items: center;
         padding: 2rem 0 0 0;
 
-        &__link {
+        .navbar {
             display: flex;
             justify-content: center;
-            width: 50%;
-            color: $color--primary-silver;
-            padding: 1.6rem 0;
-            
-            &--border {
-                font-weight: 600;
-                color: $color--primary-white;
-                border-bottom: .5rem solid $color--primary-white;
+            width: 100%;
+
+            &__link {
+                display: flex;
+                justify-content: center;
+                width: 50%;
+                color: $color--primary-silver;
+                padding: 1.6rem 0;
+                
+                &--border {
+                    font-weight: 600;
+                    color: $color--primary-white;
+                    border-bottom: .3rem solid $color--primary-white;
+                }
             }
+
         }
 
     }
-
+    
     @include tablet {
-        padding: 0 3.6rem;
-        flex-direction:row;
-        justify-content: flex-start;
-        .navbar{
-            width: 50%;
-            justify-content: space-evenly;
 
-            &__link {
-                width: fit-content;
+        &-items{
+            padding: 0 3.6rem;
+            padding-top: 2rem;
+            flex-direction:row;
+            justify-content: flex-start;
+            .navbar{
+                width: 50%;
+                justify-content: space-evenly;
+                
+
+                &__link {
+                    width: fit-content;
+                    padding-bottom: 2rem;
+                    font-size: 1.3rem;
+                }
+        }
+        }
+        
+    }
+    
+    @include desktop {
+        
+        &-items {
+            justify-content: center;
+            width: 50%;
+            .navbar{
+                width: 55%;
+                justify-content: space-evenly;
+
+                &__link {
+                    padding: 2rem;
+                }
             }
         }
-      }
-
+        
+    }
+    
 }
 
 .main {
     width: 100%;
     height: fit-content;
     display: flex;
-    height: 25vh;
+    height: 20vh;
 
     @include tablet{
-        height: 60vh;
+        height: 50vh;
         background-position: cover;
     }
 
-    &-hero-image {
+    &-hero{
+        &-image {
         width: 100%;
         display: flex;
+        justify-content: flex-start;
         align-items: center;
-        background-image: url(../assets/images/hero-bio.jpg);
+        background-image: linear-gradient(rgba($color--primary-black,0.5) 0%,rgba($color--primary-black,0.5) 80%),url(../assets/images/hero-bio.jpg);
         background-size: cover;
-        background-position-x: right;
+        background-position-x: 100%;
+        }
+        &-text{
+            
+        }
     }
     
+    
+
     &__title{
-        display: flex;
-        justify-content: center;
-        margin-left: 3.6rem;
-        font-size: 2.4rem;
+        margin-left: 1.6rem;
+        // font-size: 1.6rem;
         color: $color--primary-white;
         z-index: 1;
 
         @include tablet{
+            font-size: 4rem;
+            margin-left: 3.6rem;
+        }
+        @include desktop {
             font-size: 6rem;
+            margin: 0 8rem;   
         }
     }
 
+    @include desktop{
+        height: 75vh;
+        background-position: cover;
+    }
+
+    
     
 }
 
@@ -101,6 +146,12 @@
 
     &__subtitle{
         font-weight: 600;
+        margin: 0;
+    }
+
+    &__subtitle--gray {
+        color: $color--primary-black;
+        margin-top: 1rem;
     }
 
     &-down__title {
@@ -109,16 +160,50 @@
     }
 
     @include tablet{
-        padding: 2.4rem;
+        padding: 2.4rem 3.6rem;
 
         &-up, &-down {
-                margin-left: 10rem;
+                margin-left: 3.6rem;
                 margin-right: 1.6rem;
         }
         
         &-text{
             display: flex;
             padding-right: 0 2.4rem;
+        }
+    }
+
+    @include desktop {
+        padding: 0 10rem;
+        
+        &-items {
+            display: flex;
+            flex-direction: column;
+            margin: 0;
+            width: 90%;
+        }
+
+        &-up {
+            &__title{
+                font-size: 2.4rem;
+                margin-bottom: 0;
+            }
+        }
+
+        &-down{
+            margin-top: 2.4rem;
+            margin-bottom: 2.4rem;
+        }
+        &__text{
+            margin-right: 2.4rem ;
+        }
+
+        &__title {
+            margin-bottom: 2.4rem;
+        }
+
+        &__image {
+            margin: 2.4rem 0;
         }
     }
 }
@@ -135,7 +220,7 @@
     }
 
     @include tablet{
-        padding: 2.4rem;
+        padding: 2.4rem 3.6rem;
         
         &-images{
             display: flex;
@@ -145,6 +230,16 @@
 
         &__image{
             width: 31%;
+        }
+    }
+
+    @include desktop {
+        padding: 0 10rem;
+        padding-bottom: 2rem;
+
+        &__image {
+            margin: 0;
+            margin-bottom: 2rem;
         }
     }
 }
@@ -168,7 +263,7 @@
         padding: 1.6rem 0 0 0;
     }
     &__image {
-        padding-top: 1.6rem;
+        padding-top: 3.6rem;
     }
 
     @include tablet{
@@ -176,25 +271,76 @@
         padding: 2.4rem;
         flex-direction: column;
         position: relative;
+        font-size: 1.3rem;
 
-        &-cards {
+        &-up{
             display: flex;
             justify-content: space-between;
+            align-items: center;
+            width: 70%;
+            
+        }
+        
+        &__title{
+            margin: 0;
+            font-size: 3rem;
         }
 
-        &-card__name {
-            font-size: 1.6rem;
+        &-social {
+            img {
+                width: 2.4rem;
+                height: 2.4rem;
+            }
+        }
+        
+        &-cards {
+            display: flex;
+            justify-content: center;
+            align-items: baseline;
         }
 
+        &-card{
+            display: flex;
+            flex-direction: column;
+            align-items: baseline;
+            margin-right: 2rem;
+            &__name {
+                font-size: 1.3rem;
+            }
+            &__email{
+                margin: 2rem 0;
+            }
+    
+        }
+        
         &-image {
             position: absolute;
-            top: 13%;
-            right: 12%;
-            scale: 2;
+            top:1.6rem;
+            right: 5%;
         }
 
         &__copy {
             padding: 2.4rem 0;
         }
+
+    }
+
+    @include desktop{
+        padding: 2.4rem 10rem;
+
+        &-up{
+            width: 47%;
+            
+        }
+
+        &-image{
+            padding-right: 5%;
+        }
+
+        &-cards {
+            justify-content: space-between;
+            width: 80%;
+        }
+        
     }
 }

@@ -26,18 +26,12 @@ html {
 body {
   display: flex;
   flex-direction: column;
-  font-size: 1.6rem;
+  font-size: 1.2rem;
   font-family: "Avenir next";
   margin: 0;
   padding: 0;
   background-color: #ffffff;
-}
-@media screen and (min-width: 1280px) {
-  body {
-    min-width: 128rem;
-    max-width: none;
-    margin: 0 AUTO;
-  }
+  width: 100vw;
 }
 
 * a, li {
@@ -47,33 +41,32 @@ body {
 }
 
 h1 {
-  font-size: 2.4rem;
+  font-size: 1.6rem;
   line-height: 3.2rem;
   font-weight: 600;
 }
 @media screen and (min-width: 768px) {
   h1 {
-    font-size: 6rem;
+    font-size: 5.6rem;
     line-height: 6.8rem;
-    font-weight: 500;
   }
 }
 
 h2 {
-  font-size: 2.4rem;
+  font-size: 1.4rem;
   line-height: 3.2rem;
   font-weight: 700;
 }
 @media screen and (min-width: 768px) {
   h2 {
-    font-size: 3.6rem;
+    font-size: 3rem;
     line-height: 4.4rem;
     font-weight: 600;
   }
 }
 
 h3 {
-  font-size: 1.4rem;
+  font-size: 1.3rem;
   line-height: 2.2rem;
   font-weight: 600;
 }
@@ -86,7 +79,7 @@ h3 {
 }
 
 p {
-  font-size: 1.3rem;
+  font-size: 1rem;
   line-height: 1.8rem;
   font-weight: 400;
 }
@@ -99,45 +92,62 @@ p {
 }
 
 .header {
+  background-color: #323232;
+}
+.header-items {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: #323232;
   padding: 2rem 0 0 0;
 }
-.header .navbar {
+.header-items .navbar {
   display: flex;
   justify-content: center;
   width: 100%;
-  padding: 2rem 0 0 0;
 }
-.header .navbar__link {
+.header-items .navbar__link {
   display: flex;
   justify-content: center;
   width: 50%;
   color: #afafaf;
   padding: 1.6rem 0;
 }
-.header .navbar__link--border {
+.header-items .navbar__link--border {
   font-weight: 600;
   color: #ffffff;
-  border-bottom: 0.5rem solid #ffffff;
+  border-bottom: 0.3rem solid #ffffff;
 }
 @media screen and (min-width: 768px) {
-  .header {
+  .header-items {
     padding: 0 3.6rem;
+    padding-top: 2rem;
     flex-direction: row;
     justify-content: flex-start;
   }
-  .header .navbar {
+  .header-items .navbar {
     width: 50%;
     justify-content: space-evenly;
   }
-  .header .navbar__link {
+  .header-items .navbar__link {
     width: -webkit-fit-content;
     width: -moz-fit-content;
     width: fit-content;
+    padding-bottom: 2rem;
+    font-size: 1.3rem;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .header-items {
+    justify-content: center;
+    width: 50%;
+  }
+  .header-items .navbar {
+    width: 55%;
+    justify-content: space-evenly;
+  }
+  .header-items .navbar__link {
+    padding: 2rem;
   }
 }
 
@@ -147,33 +157,44 @@ p {
   height: -moz-fit-content;
   height: fit-content;
   display: flex;
-  height: 25vh;
+  height: 20vh;
 }
 @media screen and (min-width: 768px) {
   .main {
-    height: 60vh;
+    height: 50vh;
     background-position: cover;
   }
 }
 .main-hero-image {
   width: 100%;
   display: flex;
+  justify-content: flex-start;
   align-items: center;
-  background-image: url(../assets/images/hero-bio.jpg);
+  background-image: linear-gradient(rgba(50, 50, 50, 0.5) 0%, rgba(50, 50, 50, 0.5) 80%), url(../assets/images/hero-bio.jpg);
   background-size: cover;
-  background-position-x: right;
+  background-position-x: 100%;
 }
 .main__title {
-  display: flex;
-  justify-content: center;
-  margin-left: 3.6rem;
-  font-size: 2.4rem;
+  margin-left: 1.6rem;
   color: #ffffff;
   z-index: 1;
 }
 @media screen and (min-width: 768px) {
   .main__title {
+    font-size: 4rem;
+    margin-left: 3.6rem;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .main__title {
     font-size: 6rem;
+    margin: 0 8rem;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .main {
+    height: 75vh;
+    background-position: cover;
   }
 }
 
@@ -190,6 +211,11 @@ p {
 }
 .section__subtitle {
   font-weight: 600;
+  margin: 0;
+}
+.section__subtitle--gray {
+  color: #323232;
+  margin-top: 1rem;
 }
 .section-down__title {
   font-weight: 600;
@@ -197,15 +223,43 @@ p {
 }
 @media screen and (min-width: 768px) {
   .section {
-    padding: 2.4rem;
+    padding: 2.4rem 3.6rem;
   }
   .section-up, .section-down {
-    margin-left: 10rem;
+    margin-left: 3.6rem;
     margin-right: 1.6rem;
   }
   .section-text {
     display: flex;
     padding-right: 0 2.4rem;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .section {
+    padding: 0 10rem;
+  }
+  .section-items {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    width: 90%;
+  }
+  .section-up__title {
+    font-size: 2.4rem;
+    margin-bottom: 0;
+  }
+  .section-down {
+    margin-top: 2.4rem;
+    margin-bottom: 2.4rem;
+  }
+  .section__text {
+    margin-right: 2.4rem;
+  }
+  .section__title {
+    margin-bottom: 2.4rem;
+  }
+  .section__image {
+    margin: 2.4rem 0;
   }
 }
 
@@ -221,7 +275,7 @@ p {
 }
 @media screen and (min-width: 768px) {
   .gallery {
-    padding: 2.4rem;
+    padding: 2.4rem 3.6rem;
   }
   .gallery-images {
     display: flex;
@@ -230,6 +284,16 @@ p {
   }
   .gallery__image {
     width: 31%;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .gallery {
+    padding: 0 10rem;
+    padding-bottom: 2rem;
+  }
+  .gallery__image {
+    margin: 0;
+    margin-bottom: 2rem;
   }
 }
 
@@ -250,7 +314,7 @@ p {
   padding: 1.6rem 0 0 0;
 }
 .footer__image {
-  padding-top: 1.6rem;
+  padding-top: 3.6rem;
 }
 @media screen and (min-width: 768px) {
   .footer {
@@ -258,21 +322,60 @@ p {
     padding: 2.4rem;
     flex-direction: column;
     position: relative;
+    font-size: 1.3rem;
+  }
+  .footer-up {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 70%;
+  }
+  .footer__title {
+    margin: 0;
+    font-size: 3rem;
+  }
+  .footer-social img {
+    width: 2.4rem;
+    height: 2.4rem;
   }
   .footer-cards {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    align-items: baseline;
+  }
+  .footer-card {
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+    margin-right: 2rem;
   }
   .footer-card__name {
-    font-size: 1.6rem;
+    font-size: 1.3rem;
+  }
+  .footer-card__email {
+    margin: 2rem 0;
   }
   .footer-image {
     position: absolute;
-    top: 13%;
-    right: 12%;
-    scale: 2;
+    top: 1.6rem;
+    right: 5%;
   }
   .footer__copy {
     padding: 2.4rem 0;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .footer {
+    padding: 2.4rem 10rem;
+  }
+  .footer-up {
+    width: 47%;
+  }
+  .footer-image {
+    padding-right: 5%;
+  }
+  .footer-cards {
+    justify-content: space-between;
+    width: 80%;
   }
 }/*# sourceMappingURL=bio.css.map */
