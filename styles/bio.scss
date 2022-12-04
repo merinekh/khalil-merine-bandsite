@@ -31,6 +31,12 @@
                     color: $color--primary-white;
                     border-bottom: .3rem solid $color--primary-white;
                 }
+
+                &:hover {
+                    width: 50%;
+                    background-color: $color--secondary-black;
+                    font-weight: bold;
+                }
             }
 
         }
@@ -214,6 +220,10 @@
     &__image{
         width: 100%;
         margin: 1rem 0;
+        
+        &:hover {
+            scale: 1.1;
+        }
     }
 
     @include tablet{

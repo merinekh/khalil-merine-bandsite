@@ -120,6 +120,11 @@ p {
   color: #ffffff;
   border-bottom: 0.3rem solid #ffffff;
 }
+.header-items .navbar__link:hover {
+  width: 50%;
+  background-color: #000000;
+  font-weight: bold;
+}
 @media screen and (min-width: 768px) {
   .header-items {
     padding: 0 3.6rem;
@@ -274,6 +279,9 @@ p {
 .gallery__image {
   width: 100%;
   margin: 1rem 0;
+}
+.gallery__image:hover {
+  scale: 1.1;
 }
 @media screen and (min-width: 768px) {
   .gallery {
