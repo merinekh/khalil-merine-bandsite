@@ -147,7 +147,7 @@ p {
     justify-content: space-evenly;
   }
   .header-items .navbar__link {
-    padding: 2rem;
+    padding: 3rem 0;
   }
 }
 
