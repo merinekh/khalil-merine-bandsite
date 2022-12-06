@@ -1,0 +1,353 @@
+@use 'partials/fonts' as *;
+@use 'partials/variables' as *;
+@use 'partials/mixins' as *;
+@use 'partials/reset' as *;
+
+
+.header {
+    background-color: $color--primary-black;
+
+    &-items{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 2rem 0 0 0;
+
+        .navbar {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+
+            &__link {
+                display: flex;
+                justify-content: center;
+                width: 50%;
+                color: $color--primary-silver;
+                padding: 1.6rem 0;
+                
+                &--border {
+                    font-weight: 600;
+                    color: $color--primary-white;
+                    border-bottom: .3rem solid $color--primary-white;
+                }
+
+                &:hover {
+                    width: 50%;
+                    background-color: $color--secondary-black;
+                    font-weight: bold;
+                }
+            }
+
+        }
+
+    }
+    
+    @include tablet {
+
+        &-items{
+            padding: 0 3.6rem;
+            padding-top: 2rem;
+            flex-direction:row;
+            justify-content: flex-start;
+            .navbar{
+                width: 50%;
+                justify-content: space-evenly;
+                
+
+                &__link {
+                    width: fit-content;
+                    padding-bottom: 2rem;
+                    font-size: 1.3rem;
+                }
+        }
+        }
+        
+    }
+    
+    @include desktop {
+        
+        &-items {
+            justify-content: center;
+            width: 50%;
+            .navbar{
+                width: 55%;
+                justify-content: space-evenly;
+
+                &__link {
+                    padding: 3rem 0;
+                }
+            }
+        }
+        
+    }
+    
+}
+
+.main {
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    height: 20vh;
+
+    @include tablet{
+        height: 50vh;
+        background-position: cover;
+    }
+
+    &-hero{
+        &-image {
+        width: 100%;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        background-image: linear-gradient(rgba($color--primary-black,0.5) 0%,rgba($color--primary-black,0.5) 80%),url(../assets/images/Photo-gallery-3.jpg);
+        background-size: contain;
+        
+        }
+    }
+    
+    
+
+    &__title{
+        margin-left: 1.6rem;
+        // font-size: 1.6rem;
+        color: $color--primary-white;
+        z-index: 1;
+
+        @include tablet{
+            font-size: 4rem;
+            margin-left: 3.6rem;
+        }
+        @include desktop {
+            font-size: 6rem;
+            margin: 0 8rem;   
+        }
+    }
+
+    @include desktop{
+        height: 75vh;
+        background-position: cover;
+    }
+
+    
+    
+}
+
+.section {
+    display: flex;
+    flex-direction: column;
+    padding: 0rem 1.6rem 0rem 1.6rem;
+    
+    &__image {
+        width: 100%;
+    }
+
+    &__title {
+        margin-bottom: 1rem ;
+    }
+
+    &__subtitle{
+        font-weight: 600;
+        margin: 0;
+    }
+
+    &__subtitle--gray {
+        color: $color--primary-black;
+        margin-top: 1rem;
+    }
+
+    &-down__title {
+        font-weight: 600;
+        font-size: 1.4rem;
+    }
+
+    @include tablet{
+        padding: 2.4rem 3.6rem;
+
+        &-up, &-down {
+                margin-left: 3.6rem;
+                margin-right: 1.6rem;
+        }
+        
+        &-text{
+            display: flex;
+            padding-right: 0 2.4rem;
+        }
+    }
+
+    @include desktop {
+        padding: 0 10rem;
+        
+        &-items {
+            display: flex;
+            flex-direction: column;
+            margin: 0;
+            width: 90%;
+        }
+
+        &-up {
+            &__title{
+                font-size: 2.4rem;
+                margin-bottom: 0;
+            }
+        }
+
+        &-down{
+            margin-top: 2.4rem;
+            margin-bottom: 2.4rem;
+        }
+        &__text{
+            margin-right: 2.4rem ;
+        }
+
+        &__title {
+            margin-bottom: 2.4rem;
+        }
+
+        &__image {
+            margin: 2.4rem 0;
+        }
+    }
+}
+
+.gallery {
+    display: flex;
+    flex-direction: column;
+    padding: 0 1.6rem;
+    background-color:rgba($color: $color--secondary-silver, $alpha: .2);
+
+    &__image{
+        width: 100%;
+        margin: 1rem 0;
+        
+        &:hover {
+            scale: 1.1;
+        }
+    }
+
+    @include tablet{
+        padding: 2.4rem 3.6rem;
+        
+        &-images{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        &__image{
+            width: 31%;
+        }
+    }
+
+    @include desktop {
+        padding: 0 10rem;
+        padding-bottom: 2rem;
+
+        &__image {
+            margin: 0;
+            margin-bottom: 2rem;
+        }
+    }
+}
+
+.footer{
+    display: flex;
+    flex-direction: column;
+    background-color: $color--primary-black;
+    padding: 2.4rem 1.6rem 0 1.6rem;
+    color: $color--primary-white;
+
+    &-social {
+        display: flex;
+        
+        &__logo{
+            margin-right: 3rem;
+        }   
+    }
+
+    &-cards div{
+        padding: 1.6rem 0 0 0;
+    }
+    &__image {
+        padding-top: 3.6rem;
+    }
+
+    @include tablet{
+        display: flex;
+        padding: 2.4rem;
+        flex-direction: column;
+        position: relative;
+        font-size: 1.3rem;
+
+        &-up{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 58%;
+            
+        }
+        
+        &__title{
+            margin: 0;
+            font-size: 3rem;
+        }
+
+        &-social {
+            img {
+                width: 2.4rem;
+                height: 2.4rem;
+            }
+        }
+        
+        &-cards {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+        }
+
+        &-card{
+            display: flex;
+            flex-direction: column;
+            align-items: baseline;
+            margin-right: 2rem;
+            &__name {
+                font-size: 1.3rem;
+            }
+            &__email{
+                margin: 2rem 0;
+            }
+    
+        }
+        
+        &-image {
+            position: absolute;
+            top:1.6rem;
+            right: 5%;
+        }
+
+        &__copy {
+            padding: 2.4rem 0;
+        }
+
+    }
+
+    @include desktop{
+        padding: 2.4rem 10rem;
+
+        &-up{
+            width: 47%;
+            
+        }
+
+        &-image{
+            padding-right: 5%;
+        }
+
+        &-cards {
+            justify-content: space-between;
+            width: 80%;
+        }
+        
+    }
+}
