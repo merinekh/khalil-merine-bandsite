@@ -251,6 +251,9 @@ p {
   .section {
     padding: 2.4rem 3.6rem;
   }
+  .section-button {
+    max-width: 15rem;
+  }
 }
 @media screen and (min-width: 1280px) {
   .section {
