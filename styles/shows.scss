@@ -91,7 +91,7 @@
     height: 35vh;
 
     @include tablet{
-        height: 50vh;
+        height: 70vh;
         background-position: cover;
     }
 
@@ -106,21 +106,34 @@
         background-size: cover;
         }
         
-        &__title,&__text,&__iframe {
+        &-text,&__iframe {
         margin-left: 1.6rem;
         // font-size: 1.6rem;
         color: $color--primary-white;
         z-index: 1;
 
         @include tablet{
-            font-size: 4rem;
             margin-left: 3.6rem;
         }
         @include desktop {
             font-size: 6rem;
             margin: 0 8rem;   
         }
-    }
+        }
+
+        @include tablet {
+            &__text {
+                margin: 0;
+            }
+            &__title{
+                margin-top: 0;
+            }
+            &__iframe{
+                width: 52%;
+            }
+        }
+        
+        
     }
 
     @include desktop{
@@ -235,7 +248,7 @@
         padding: 1.6rem 0 0 0;
     }
     &__image {
-        padding-top: 3.6rem;
+        margin-top: 3.6rem;
     }
 
     @include tablet{

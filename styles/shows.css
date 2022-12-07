@@ -49,8 +49,9 @@ h1 {
 }
 @media screen and (min-width: 768px) {
   h1 {
-    font-size: 5.6rem;
+    font-size: 6rem;
     line-height: 6.8rem;
+    font-weight: 600;
   }
 }
 
@@ -61,7 +62,7 @@ h2 {
 }
 @media screen and (min-width: 768px) {
   h2 {
-    font-size: 3rem;
+    font-size: 3.6rem;
     line-height: 4.4rem;
     font-weight: 600;
   }
@@ -168,7 +169,7 @@ p {
 }
 @media screen and (min-width: 768px) {
   .main {
-    height: 50vh;
+    height: 70vh;
     background-position: cover;
   }
 }
@@ -180,21 +181,31 @@ p {
   background-image: linear-gradient(rgba(50, 50, 50, 0.5) 0%, rgba(50, 50, 50, 0.5) 80%), url(../assets/images/hero-shows.jpg);
   background-size: cover;
 }
-.main-hero__title, .main-hero__text, .main-hero__iframe {
+.main-hero-text, .main-hero__iframe {
   margin-left: 1.6rem;
   color: #ffffff;
   z-index: 1;
 }
 @media screen and (min-width: 768px) {
-  .main-hero__title, .main-hero__text, .main-hero__iframe {
-    font-size: 4rem;
+  .main-hero-text, .main-hero__iframe {
     margin-left: 3.6rem;
   }
 }
 @media screen and (min-width: 1280px) {
-  .main-hero__title, .main-hero__text, .main-hero__iframe {
+  .main-hero-text, .main-hero__iframe {
     font-size: 6rem;
     margin: 0 8rem;
+  }
+}
+@media screen and (min-width: 768px) {
+  .main-hero__text {
+    margin: 0;
+  }
+  .main-hero__title {
+    margin-top: 0;
+  }
+  .main-hero__iframe {
+    width: 52%;
   }
 }
 @media screen and (min-width: 1280px) {
@@ -301,7 +312,7 @@ p {
   padding: 1.6rem 0 0 0;
 }
 .footer__image {
-  padding-top: 3.6rem;
+  margin-top: 3.6rem;
 }
 @media screen and (min-width: 768px) {
   .footer {
