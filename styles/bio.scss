@@ -267,13 +267,10 @@
     }
 
     &-cards div{
-        margin: 1.6rem 0 0 0;
+        padding: 1.6rem 0 0 0;
     }
     &__image {
         margin-top: 3.6rem;
-    }
-    &-up-image{
-        display: none;
     }
 
     @include tablet{
@@ -285,12 +282,10 @@
 
         &-up{
             display: flex;
-            justify-content: space-between;
+            justify-content: flex-start;
             align-items: center;
-            width: 60%;
-            &-image{
-                display: contents;
-            }
+            width: 100%;
+            
         }
         
         &__title{
@@ -299,6 +294,8 @@
         }
 
         &-social {
+            margin-left: 9rem ;
+            margin-right: 15rem;
             img {
                 width: 2.4rem;
                 height: 2.4rem;
@@ -329,19 +326,21 @@
             display: none;
         }
 
-        &__copy {
-            padding: 2.4rem 0;
-        }
-
     }
 
     @include desktop{
         padding: 2.4rem 10rem;
 
         &-up{
-            width: 47%;
+            width: 100%;
             
         }
+
+        &-social {
+            margin-left: 11rem ;
+            margin-right: 52rem;
+        }
+        
 
         &-image{
             padding-right: 5%;
@@ -349,7 +348,7 @@
 
         &-cards {
             justify-content: space-between;
-            width: 80%;
+            width: 70%;
         }
         
     }
