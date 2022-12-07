@@ -272,6 +272,9 @@
     &__image {
         margin-top: 3.6rem;
     }
+    &-up-image{
+        display: none;
+    }
 
     @include tablet{
         display: flex;
@@ -284,8 +287,10 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            width: 58%;
-            
+            width: 60%;
+            &-image{
+                display: contents;
+            }
         }
         
         &__title{
@@ -320,10 +325,8 @@
     
         }
         
-        &-image {
-            position: absolute;
-            top:1.6rem;
-            right: 5%;
+        &-bottom-image {
+            display: none;
         }
 
         &__copy {

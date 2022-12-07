@@ -327,6 +327,9 @@ p {
 .footer__image {
   margin-top: 3.6rem;
 }
+.footer-up-image {
+  display: none;
+}
 @media screen and (min-width: 768px) {
   .footer {
     display: flex;
@@ -339,7 +342,10 @@ p {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 58%;
+    width: 60%;
+  }
+  .footer-up-image {
+    display: contents;
   }
   .footer__title {
     margin: 0;
@@ -366,10 +372,8 @@ p {
   .footer-card__email {
     margin: 2rem 0;
   }
-  .footer-image {
-    position: absolute;
-    top: 1.6rem;
-    right: 5%;
+  .footer-bottom-image {
+    display: none;
   }
   .footer__copy {
     padding: 2.4rem 0;

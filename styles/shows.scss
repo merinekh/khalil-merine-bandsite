@@ -265,9 +265,9 @@
 
         &-up{
             display: flex;
-            justify-content: space-between;
+            justify-content: flex-start;
             align-items: center;
-            width: 58%;
+            width: 100%;
             
         }
         
@@ -277,6 +277,8 @@
         }
 
         &-social {
+            margin-left: 9rem ;
+            margin-right: 15rem;
             img {
                 width: 2.4rem;
                 height: 2.4rem;
@@ -303,14 +305,8 @@
     
         }
         
-        &-image {
-            position: absolute;
-            top:1.6rem;
-            right: 5%;
-        }
-
-        &__copy {
-            padding: 2.4rem 0;
+        &-bottom-image {
+            display: none;
         }
 
     }
@@ -319,9 +315,15 @@
         padding: 2.4rem 10rem;
 
         &-up{
-            width: 47%;
+            width: 100%;
             
         }
+
+        &-social {
+            margin-left: 11rem ;
+            margin-right: 52rem;
+        }
+        
 
         &-image{
             padding-right: 5%;
@@ -329,7 +331,7 @@
 
         &-cards {
             justify-content: space-between;
-            width: 80%;
+            width: 70%;
         }
         
     }
