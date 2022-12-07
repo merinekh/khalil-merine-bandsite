@@ -164,7 +164,7 @@ p {
   height: -moz-fit-content;
   height: fit-content;
   display: flex;
-  height: 20vh;
+  height: 30vh;
 }
 @media screen and (min-width: 768px) {
   .main {
@@ -175,24 +175,24 @@ p {
 .main-hero-image {
   width: 100%;
   display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  background-image: linear-gradient(rgba(50, 50, 50, 0.5) 0%, rgba(50, 50, 50, 0.5) 80%), url(../assets/images/Photo-gallery-3.jpg);
-  background-size: contain;
+  flex-direction: column;
+  justify-content: center;
+  background-image: linear-gradient(rgba(50, 50, 50, 0.5) 0%, rgba(50, 50, 50, 0.5) 80%), url(../assets/images/hero-shows.jpg);
+  background-size: cover;
 }
-.main__title {
+.main-hero__title, .main-hero__text, .main-hero__iframe {
   margin-left: 1.6rem;
   color: #ffffff;
   z-index: 1;
 }
 @media screen and (min-width: 768px) {
-  .main__title {
+  .main-hero__title, .main-hero__text, .main-hero__iframe {
     font-size: 4rem;
     margin-left: 3.6rem;
   }
 }
 @media screen and (min-width: 1280px) {
-  .main__title {
+  .main-hero__title, .main-hero__text, .main-hero__iframe {
     font-size: 6rem;
     margin: 0 8rem;
   }
