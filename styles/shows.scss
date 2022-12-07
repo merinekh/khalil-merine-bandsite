@@ -122,94 +122,57 @@
         }
     }
     }
-    
-    
-
-    
 
     @include desktop{
         height: 75vh;
         background-position: cover;
-    }
-
-    
-    
+    }    
 }
 
 .section {
     display: flex;
     flex-direction: column;
     padding: 0rem 1.6rem 0rem 1.6rem;
-    
-    &__image {
+
+    &-cards{
         width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    &__subtitle {
+        color: $color--primary-silver;
     }
 
-    &__title {
-        margin-bottom: 1rem ;
-    }
-
-    &__subtitle{
+    &__date {
         font-weight: 600;
-        margin: 0;
     }
 
-    &__subtitle--gray {
-        color: $color--primary-black;
-        margin-top: 1rem;
+    &-button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 4rem;
+        width: 100%;
+        background-color: $color--primary-black;
+        border-radius: .4rem;
+        padding: 0 3.2rem;
     }
-
-    &-down__title {
-        font-weight: 600;
-        font-size: 1.4rem;
-    }
-
+    
+    &-divider{
+            height: .1rem;
+            color: $color--secondary-silver;
+            margin-left: -1.6rem;
+            width: 100vw;
+        }
+    
     @include tablet{
         padding: 2.4rem 3.6rem;
 
-        &-up, &-down {
-                margin-left: 3.6rem;
-                margin-right: 1.6rem;
-        }
-        
-        &-text{
-            display: flex;
-            padding-right: 0 2.4rem;
-        }
     }
 
     @include desktop {
         padding: 0 10rem;
-        
-        &-items {
-            display: flex;
-            flex-direction: column;
-            margin: 0;
-            width: 90%;
-        }
-
-        &-up {
-            &__title{
-                font-size: 2.4rem;
-                margin-bottom: 0;
-            }
-        }
-
-        &-down{
-            margin-top: 2.4rem;
-            margin-bottom: 2.4rem;
-        }
-        &__text{
-            margin-right: 2.4rem ;
-        }
-
-        &__title {
-            margin-bottom: 2.4rem;
-        }
-
-        &__image {
-            margin: 2.4rem 0;
-        }
     }
 }
 
