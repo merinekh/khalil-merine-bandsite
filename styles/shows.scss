@@ -1,338 +1,323 @@
-@use 'partials/fonts' as *;
-@use 'partials/variables' as *;
-@use 'partials/mixins' as *;
-@use 'partials/reset' as *;
-
+@use "partials/fonts" as *;
+@use "partials/variables" as *;
+@use "partials/mixins" as *;
+@use "partials/reset" as *;
 
 .header {
-    background-color: $color--primary-black;
+  background-color: $color--primary-black;
 
-    &-items{
+  &-items {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 0 0 0;
+
+    .navbar {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+
+      &__link {
         display: flex;
-        flex-direction: column;
         justify-content: center;
-        align-items: center;
-        padding: 2rem 0 0 0;
+        width: 50%;
+        color: $color--primary-silver;
+        padding: 1.6rem 0;
 
-        .navbar {
-            display: flex;
-            justify-content: center;
-            width: 100%;
-
-            &__link {
-                display: flex;
-                justify-content: center;
-                width: 50%;
-                color: $color--primary-silver;
-                padding: 1.6rem 0;
-                
-                &--border {
-                    font-weight: 600;
-                    color: $color--primary-white;
-                    border-bottom: .3rem solid $color--primary-white;
-                }
-
-                &:hover {
-                    width: 50%;
-                    background-color: $color--secondary-black;
-                    font-weight: bold;
-                }
-            }
-
+        &--border {
+          font-weight: 600;
+          color: $color--primary-white;
+          border-bottom: 0.3rem solid $color--primary-white;
         }
 
+        &:hover {
+          width: 50%;
+          background-color: $color--secondary-black;
+          font-weight: bold;
+        }
+      }
     }
-    
-    @include tablet {
+  }
 
-        &-items{
-            padding: 0 3.6rem;
-            padding-top: 2rem;
-            flex-direction:row;
-            justify-content: flex-start;
-            .navbar{
-                width: 50%;
-                justify-content: space-evenly;
-                
+  @include tablet {
+    &-items {
+      padding: 0 3.6rem;
+      padding-top: 2rem;
+      flex-direction: row;
+      justify-content: flex-start;
+      .navbar {
+        width: 50%;
+        justify-content: space-evenly;
 
-                &__link {
-                    width: fit-content;
-                    padding-bottom: 2rem;
-                    font-size: 1.3rem;
-                }
+        &__link {
+          width: fit-content;
+          padding-bottom: 2rem;
+          font-size: 1.3rem;
         }
-        }
-        
+      }
     }
-    
-    @include desktop {
-        
-        &-items {
-            justify-content: center;
-            width: 50%;
-            .navbar{
-                width: 55%;
-                justify-content: space-evenly;
+  }
 
-                &__link {
-                    padding: 3rem 0;
-                }
-            }
+  @include desktop {
+    &-items {
+      justify-content: center;
+      width: 50%;
+      .navbar {
+        width: 55%;
+        justify-content: space-evenly;
+
+        &__link {
+          padding: 3rem 0;
         }
-        
+      }
     }
-    
+  }
 }
 
 .main {
-    width: 100%;
-    height: fit-content;
-    display: flex;
-    height: 35vh;
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  height: 35vh;
 
-    @include tablet{
-        height: 70vh;
-        background-position: cover;
-    }
+  @include tablet {
+    height: 70vh;
+    background-position: cover;
+  }
 
-    &-hero{
-        &-image {
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        background-image: linear-gradient(rgba($color--primary-black,0.5) 0%,rgba($color--primary-black,0.5) 80%),
+  &-hero {
+    &-image {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      background-image: linear-gradient(
+          rgba($color--primary-black, 0.5) 0%,
+          rgba($color--primary-black, 0.5) 80%
+        ),
         url(../assets/images/hero-shows.jpg);
-        background-size: cover;
-        }
-        
-        &-text,&__iframe {
-        margin-left: 1.6rem;
-        // font-size: 1.6rem;
-        color: $color--primary-white;
-        z-index: 1;
-
-        @include tablet{
-            margin-left: 3.6rem;
-        }
-        @include desktop {
-            font-size: 6rem;
-            margin: 0 8rem;   
-        }
-        }
-
-        @include tablet {
-            &__text {
-                margin: 0;
-            }
-            &__title{
-                margin-top: 0;
-            }
-            &__iframe{
-                width: 52%;
-            }
-        }
-        
-        
+      background-size: cover;
     }
 
-    @include desktop{
-        height: 75vh;
-        background-position: cover;
-    }    
+    &-text,
+    &__iframe {
+      margin-left: 1.6rem;
+      // font-size: 1.6rem;
+      color: $color--primary-white;
+      z-index: 1;
+
+      @include tablet {
+        margin-left: 3.6rem;
+      }
+      @include desktop {
+        font-size: 6rem;
+        margin: 0 8rem;
+      }
+    }
+
+    @include tablet {
+      &__text {
+        margin: 0;
+      }
+      &__title {
+        margin-top: 0;
+      }
+      &__iframe {
+        width: 52%;
+      }
+    }
+  }
+
+  @include desktop {
+    height: 75vh;
+    background-position: cover;
+  }
 }
 
 .section {
+  display: flex;
+  flex-direction: column;
+  padding: 0rem 1.6rem 0rem 1.6rem;
+
+  &-cards {
+    width: 100%;
     display: flex;
     flex-direction: column;
-    padding: 0rem 1.6rem 0rem 1.6rem;
+  }
 
-    &-cards{
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-    }
-    
-    &__subtitle {
-        color: $color--primary-silver;
-    }
+  &__subtitle {
+    color: $color--primary-silver;
+  }
 
-    &__date {
-        font-weight: 600;
-    }
+  &__date {
+    font-weight: 600;
+  }
+
+  &-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 4rem;
+    width: 100%;
+    background-color: $color--primary-black;
+    border-radius: 0.4rem;
+    padding: 0 3.2rem;
+  }
+
+  &-divider {
+    height: 0.1rem;
+    color: $color--secondary-silver;
+    margin-left: -1.6rem;
+    width: 100vw;
+  }
+
+  @include tablet {
+    padding: 2.4rem 3.6rem;
 
     &-button {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 4rem;
-        width: 100%;
-        background-color: $color--primary-black;
-        border-radius: .4rem;
-        padding: 0 3.2rem;
+      max-width: 15rem;
     }
-    
-    &-divider{
-            height: .1rem;
-            color: $color--secondary-silver;
-            margin-left: -1.6rem;
-            width: 100vw;
-        }
-    
-    @include tablet{
-        padding: 2.4rem 3.6rem;
+  }
 
-        &-button{
-            max-width: 15rem;
-        }
-
-        
-    }
-
-    @include desktop {
-        padding: 0 10rem;
-    }
+  @include desktop {
+    padding: 0 10rem;
+  }
 }
 
 .gallery {
-    display: flex;
-    flex-direction: column;
-    padding: 0 1.6rem;
-    background-color:rgba($color: $color--secondary-silver, $alpha: .2);
+  display: flex;
+  flex-direction: column;
+  padding: 0 1.6rem;
+  background-color: rgba($color: $color--secondary-silver, $alpha: 0.2);
 
-    &__image{
-        width: 100%;
-        margin: 1rem 0;
-        
-        &:hover {
-            scale: 1.1;
-        }
+  &__image {
+    width: 100%;
+    margin: 1rem 0;
+
+    &:hover {
+      scale: 1.1;
+    }
+  }
+
+  @include tablet {
+    padding: 2.4rem 3.6rem;
+
+    &-images {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
     }
 
-    @include tablet{
-        padding: 2.4rem 3.6rem;
-        
-        &-images{
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-        }
-
-        &__image{
-            width: 31%;
-        }
+    &__image {
+      width: 31%;
     }
+  }
 
-    @include desktop {
-        padding: 0 10rem;
-        padding-bottom: 2rem;
+  @include desktop {
+    padding: 0 10rem;
+    padding-bottom: 2rem;
 
-        &__image {
-            margin: 0;
-            margin-bottom: 2rem;
-        }
+    &__image {
+      margin: 0;
+      margin-bottom: 2rem;
     }
+  }
 }
 
-.footer{
+.footer {
+  display: flex;
+  flex-direction: column;
+  background-color: $color--primary-black;
+  padding: 2.4rem 1.6rem 0 1.6rem;
+  color: $color--primary-white;
+
+  &-social {
     display: flex;
+
+    &__logo {
+      margin-right: 3rem;
+    }
+  }
+
+  &-cards div {
+    padding: 1.6rem 0 0 0;
+  }
+  &__image {
+    margin-top: 3.6rem;
+  }
+
+  @include tablet {
+    display: flex;
+    padding: 2.4rem;
     flex-direction: column;
-    background-color: $color--primary-black;
-    padding: 2.4rem 1.6rem 0 1.6rem;
-    color: $color--primary-white;
+    position: relative;
+    font-size: 1.3rem;
+
+    &-up {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      width: 100%;
+    }
+
+    &__title {
+      margin: 0;
+      font-size: 3rem;
+    }
 
     &-social {
-        display: flex;
-        
-        &__logo{
-            margin-right: 3rem;
-        }   
+      margin-left: 9rem;
+      margin-right: 15rem;
+      img {
+        width: 2.4rem;
+        height: 2.4rem;
+      }
     }
 
-    &-cards div{
-        padding: 1.6rem 0 0 0;
-    }
-    &__image {
-        margin-top: 3.6rem;
+    &-cards {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
     }
 
-    @include tablet{
-        display: flex;
-        padding: 2.4rem;
-        flex-direction: column;
-        position: relative;
+    &-card {
+      display: flex;
+      flex-direction: column;
+      align-items: baseline;
+      margin-right: 2rem;
+      &__name {
         font-size: 1.3rem;
-
-        &-up{
-            display: flex;
-            justify-content: flex-start;
-            align-items: center;
-            width: 100%;
-            
-        }
-        
-        &__title{
-            margin: 0;
-            font-size: 3rem;
-        }
-
-        &-social {
-            margin-left: 9rem ;
-            margin-right: 15rem;
-            img {
-                width: 2.4rem;
-                height: 2.4rem;
-            }
-        }
-        
-        &-cards {
-            display: flex;
-            justify-content: space-between;
-            align-items: baseline;
-        }
-
-        &-card{
-            display: flex;
-            flex-direction: column;
-            align-items: baseline;
-            margin-right: 2rem;
-            &__name {
-                font-size: 1.3rem;
-            }
-            &__email{
-                margin: 2rem 0;
-            }
-    
-        }
-        
-        &-bottom-image {
-            display: none;
-        }
-
+      }
+      &__email {
+        margin: 2rem 0;
+      }
     }
 
-    @include desktop{
-        padding: 2.4rem 10rem;
-
-        &-up{
-            width: 100%;
-            
-        }
-
-        &-social {
-            margin-left: 11rem ;
-            margin-right: 52rem;
-        }
-        
-
-        &-image{
-            padding-right: 5%;
-        }
-
-        &-cards {
-            justify-content: space-between;
-            width: 70%;
-        }
-        
+    &-bottom-image {
+      display: none;
     }
+  }
+
+  @include desktop {
+    padding: 2.4rem 10rem;
+
+    &-up {
+      width: 100%;
+    }
+
+    &-social {
+      margin-left: 11rem;
+      margin-right: 52rem;
+    }
+
+    &-image {
+      padding-right: 5%;
+    }
+
+    &-cards {
+      justify-content: space-between;
+      width: 70%;
+    }
+  }
 }
