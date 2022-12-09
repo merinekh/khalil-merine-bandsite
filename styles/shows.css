@@ -227,7 +227,7 @@ p {
   display: flex;
   flex-direction: column;
 }
-.section__subtitle {
+.section-date__subtitle, .section-venue__subtitle, .section-location__subtitle {
   color: #afafaf;
 }
 .section__date {
@@ -240,10 +240,11 @@ p {
   height: 4rem;
   width: 100%;
   background-color: #323232;
+  color: #ffffff;
   border-radius: 0.4rem;
   padding: 0 3.2rem;
 }
-.section-divider {
+.section__line {
   height: 0.1rem;
   color: #e1e1e1;
   margin-left: -1.6rem;

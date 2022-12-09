@@ -30,14 +30,79 @@ let shows = [
     location: "San Francisco, Ca",
   },
 ];
-// console.log(shows.length)
+
+// function add element + classname
+const createElementWithClass = (type, className) => {
+  let element = document.createElement(type);
+  element.classList.add(className);
+  return element;
+};
+// Creating all the component
+const sectionCards = createElementWithClass("div", "section-cards");
+const sectionCard = createElementWithClass("div", "section-card");
+
+const sectionDates = createElementWithClass("div", "section-dates");
+const sectionVenues = createElementWithClass("div", "section-venues");
+const sectionLocations = createElementWithClass("div", "section-locations");
+
+const sectionDateSubtitle = createElementWithClass(
+  "p",
+  "section-date__subtitle"
+);
+const sectionVenueSubtitle = createElementWithClass(
+  "p",
+  "section-venue__subtitle"
+);
+const sectionLocationSubtitle = createElementWithClass(
+  "p",
+  "section-location__subtitle"
+);
+
+const sectionDate = createElementWithClass("p", "section__date");
+const sectionVenue = createElementWithClass("p", "section__venue");
+const sectionLocation = createElementWithClass("p", "section__location");
+const sectionButton = createElementWithClass("input", "section-button");
+const sectionLine = createElementWithClass("hr", "section__line");
+
+sectionDateSubtitle.innerHTML = "DATE";
+sectionVenueSubtitle.innerHTML = "VENUE";
+sectionLocationSubtitle.innerHTML = "LOCATION";
+
+sectionButton.type = "button";
+sectionButton.value = "BUY TICKETS";
+
+section = document.querySelector("section");
+let cards = [{}];
 
 for (let i = 0; i < shows.length; i++) {
-  const showsItem = shows[i];
+  sectionDate.innerHTML = shows[i].date;
+  sectionVenue.innerHTML = shows[i].venue;
+  sectionLocation.innerHTML = shows[i].location;
 
-  let showsDate = createElementWithClass("div", "pet");
-  console.log(showsItem);
+  sectionDates.appendChild(sectionDateSubtitle);
+  sectionDates.appendChild(sectionDate);
+  sectionVenues.appendChild(sectionVenueSubtitle);
+  sectionVenues.appendChild(sectionVenue);
+  sectionLocations.appendChild(sectionLocationSubtitle);
+  sectionLocations.appendChild(sectionLocation);
+
+  sectionCard.appendChild(sectionDates);
+  sectionCard.appendChild(sectionVenues);
+  sectionCard.appendChild(sectionLocations);
+  sectionCard.appendChild(sectionButton);
+  sectionCard.appendChild(sectionLine);
+
+  sectionCards.appendChild(sectionCard);
+
+  section.appendChild(sectionCards);
+  console.log(sectionCards);
 }
+
+console.log(sectionCards);
+
+// for (let i = 0; i < shows.length; i++) {
+//   const showsItem = shows[i];
+// }
 //     let petName = document.createElement("h3");
 //     petName.classList.add("pet__name");
 //     petName.innerText = petItem.name;

@@ -146,7 +146,9 @@
     flex-direction: column;
   }
 
-  &__subtitle {
+  &-date__subtitle,
+  &-venue__subtitle,
+  &-location__subtitle {
     color: $color--primary-silver;
   }
 
@@ -161,11 +163,12 @@
     height: 4rem;
     width: 100%;
     background-color: $color--primary-black;
+    color: $color--primary-white;
     border-radius: 0.4rem;
     padding: 0 3.2rem;
   }
 
-  &-divider {
+  &__line {
     height: 0.1rem;
     color: $color--secondary-silver;
     margin-left: -1.6rem;
