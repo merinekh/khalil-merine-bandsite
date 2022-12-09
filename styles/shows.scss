@@ -178,8 +178,21 @@
   @include tablet {
     padding: 2.4rem 3.6rem;
 
+    &-card {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
     &-button {
       max-width: 15rem;
+    }
+
+    &__subtitle {
+      display: none;
+    }
+    &__line {
+      display: none;
     }
   }
 

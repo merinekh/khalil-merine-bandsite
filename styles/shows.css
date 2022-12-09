@@ -254,8 +254,19 @@ p {
   .section {
     padding: 2.4rem 3.6rem;
   }
+  .section-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
   .section-button {
     max-width: 15rem;
+  }
+  .section__subtitle {
+    display: none;
+  }
+  .section__line {
+    display: none;
   }
 }
 @media screen and (min-width: 1280px) {
