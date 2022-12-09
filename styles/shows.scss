@@ -232,6 +232,10 @@
   padding: 2.4rem 1.6rem 0 1.6rem;
   color: $color--primary-white;
 
+  &-up-image {
+    display: none;
+  }
+
   &-social {
     display: flex;
 
@@ -259,6 +263,9 @@
       justify-content: flex-start;
       align-items: center;
       width: 100%;
+      &-image {
+        display: flex;
+      }
     }
 
     &__title {

@@ -139,7 +139,7 @@
 
   &__subtitle {
     font-weight: 600;
-    margin: 0;
+    margin: 1.6rem 0;
   }
 
   &__subtitle--gray {
@@ -211,10 +211,6 @@
   &__image {
     width: 100%;
     margin: 1rem 0;
-
-    &:hover {
-      scale: 1.1;
-    }
   }
 
   @include tablet {
@@ -249,6 +245,10 @@
   padding: 2.4rem 1.6rem 0 1.6rem;
   color: $color--primary-white;
 
+  &-up-image {
+    display: none;
+  }
+
   &-social {
     display: flex;
 
@@ -276,6 +276,10 @@
       justify-content: flex-start;
       align-items: center;
       width: 100%;
+
+      &-image {
+        display: flex;
+      }
     }
 
     &__title {
