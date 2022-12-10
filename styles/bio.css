@@ -368,10 +368,6 @@ p {
     padding: 1.6rem;
   }
 }
-.form-subtitle {
-  margin: 0;
-  color: #afafaf;
-}
 .form-comments {
   display: flex;
 }
@@ -402,6 +398,10 @@ p {
   color: #e1e1e1;
   margin-left: -1.6rem;
   width: 100vw;
+}
+.form-subtitle {
+  margin: 0;
+  color: #afafaf;
 }
 
 .footer {

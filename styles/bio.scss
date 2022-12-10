@@ -295,11 +295,6 @@
     }
   }
 
-  &-subtitle {
-    margin: 0;
-    color: $color--primary-silver;
-  }
-
   &-comments {
     display: flex;
 
@@ -336,6 +331,11 @@
     color: $color--secondary-silver;
     margin-left: -1.6rem;
     width: 100vw;
+  }
+
+  &-subtitle {
+    margin: 0;
+    color: $color--primary-silver;
   }
 }
 .footer {
