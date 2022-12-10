@@ -62,36 +62,40 @@ formSubtitleName.innerHTML = "NAME";
 formSubtitleComment.innerHTML = "COMMENT";
 formButton.placeholder = "COMMENT";
 formButton.classList.add("button");
+formSubtitleName.classList.add("form-subtitle");
+formSubtitleComment.classList.add("form-subtitle");
 
 for (let i = 0; i < commentContent.length; i++) {
-  const element = commentContent[i];
-  formProfileName.innerHTML = element.author;
+  let element = commentContent[i];
+  formProfileName.innerText = commentContent[i].author;
   formProfileDate.innerHTML = element.date;
   formComment.innerHTML = element.comment;
   formCommentsImage.src = element.src;
+  console.log(element.date);
+  // We've reference the specific element in the array, We've added a date,profilename,innerhtml,formcomment
+  formInputs.appendChild(formSubtitleName);
+  formInputs.appendChild(formInputsName);
+  formInputs.appendChild(formSubtitleComment);
+  formInputs.appendChild(formInputsComment);
+  formInputs.appendChild(formButton);
 
-  console.log(element);
+  formUp.appendChild(formImage);
+  formUp.appendChild(formInputs);
+
+  formProfile.appendChild(formProfileName);
+  formProfile.appendChild(formProfileDate);
+  // console.log(formProfile);
+  formCommentsInputs.appendChild(formProfile);
+  formCommentsInputs.appendChild(formComment);
+
+  formComments.appendChild(formCommentsImage);
+  formComments.appendChild(formCommentsInputs);
+
+  form.appendChild(formTitle);
+  form.appendChild(formUp);
+  form.append(formComments);
+  // console.log(formComments);
+  // console.log(element);
 }
 
-formInputs.appendChild(formSubtitleName);
-formInputs.appendChild(formInputsName);
-formInputs.appendChild(formSubtitleComment);
-formInputs.appendChild(formInputsComment);
-formInputs.appendChild(formButton);
-
-formUp.appendChild(formImage);
-formUp.appendChild(formInputs);
-
-formProfile.appendChild(formProfileName);
-formProfile.appendChild(formProfileDate);
-
-formCommentsInputs.appendChild(formProfile);
-formCommentsInputs.appendChild(formComment);
-
-formComments.appendChild(formCommentsImage);
-formComments.appendChild(formCommentsInputs);
-
-form.appendChild(formTitle);
-form.appendChild(formUp);
-form.append(formComments);
-console.log(form);
+// console.log(form);

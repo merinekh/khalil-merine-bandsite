@@ -237,7 +237,69 @@
     }
   }
 }
+.form {
+  display: flex;
+  flex-direction: column;
+  margin: 0 1.6rem;
 
+  &-up {
+    display: flex;
+  }
+  &__image {
+    background-color: $color--primary-silver;
+    width: 4rem;
+    height: 4rem;
+    border-radius: 100%;
+    margin: 1.6rem 0;
+    margin-right: 1.6rem;
+  }
+
+  &-inputs {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    input {
+      margin-bottom: 1.6rem;
+    }
+  }
+
+  &-subtitle {
+    margin: 0;
+    color: $color--primary-silver;
+  }
+
+  &-comments {
+    display: flex;
+
+    &__image {
+      background-color: $color--primary-silver;
+      width: 4rem;
+      height: 4rem;
+      border-radius: 100%;
+      margin: 1.6rem 0;
+      margin-right: 1.6rem;
+    }
+
+    &-inputs {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  &-profile {
+    display: flex;
+    justify-content: space-between;
+
+    &__name {
+      font-weight: 600;
+    }
+
+    &__date {
+      color: $color--primary-silver;
+    }
+  }
+}
 .footer {
   display: flex;
   flex-direction: column;
