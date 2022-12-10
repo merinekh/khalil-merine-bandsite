@@ -43,90 +43,77 @@ const formUpInputsName = createElementWithClass(
   "input",
   "form-up-inputs__name"
 );
-const formSubtitleComment = createElementWithClass(
+const formUpSubtitleComment = createElementWithClass(
   "p",
-  "form-subtitle__comment"
+  "form-up-subtitle__comment"
 );
 const formUpInputsComment = createElementWithClass(
   "input",
   "form-up-inputs__comment"
 );
 const formUpButton = createElementWithClass("input", "form-up__button");
-const formComments = createElementWithClass("div", "form-comments");
-const formCommentsImage = createElementWithClass("img", "form-comments__image");
-const formCommentsInputs = createElementWithClass(
-  "div",
-  "form-comments-inputs"
-);
-const formComment = createElementWithClass("p", "form__comment");
-const formProfile = createElementWithClass("div", "form-profile");
-const formProfileName = createElementWithClass("p", "form-profile__name");
-const formProfileDate = createElementWithClass("p", "form-profile__date");
-const formLine = createElementWithClass("hr", "form__line");
 
 formTitle.innerHTML = "Join the Convesation";
-formCommentsImage.alt = "Profile-Img";
 formUpSubtitleName.innerHTML = "NAME";
-formSubtitleComment.innerHTML = "COMMENT";
+formUpSubtitleComment.innerHTML = "COMMENT";
 formUpInputsName.placeholder = "Enter your name";
 formUpInputsComment.placeholder = "Add a new comment";
 formUpButton.type = "button";
 formUpButton.value = "COMMENT";
 formUpButton.classList.add("button");
 formUpSubtitleName.classList.add("form-subtitle");
-formSubtitleComment.classList.add("form-subtitle");
+formUpSubtitleComment.classList.add("form-subtitle");
 
-// for (let i = 0; i < commentContent.length; i++) {
-//   let element = commentContent[i];
-//   formProfileName.innerText = element.author;
-//   formProfileDate.innerHTML = element.date;
-//   formComment.innerHTML = element.comment;
-//   // formCommentsImage.src = element.src;
-//   // console.log(element.date);
-//   // We've reference the specific element in the array, We've added a date,profilename,innerhtml,formcomment
-//   formUpInputs.appendChild(formUpSubtitleName);
-//   formUpInputs.appendChild(formUpInputsName);
-//   formUpInputs.appendChild(formSubtitleComment);
-//   formUpInputs.appendChild(formUpInputsComment);
-//   formUpInputs.appendChild(formUpButton);
+formUpInputs.appendChild(formUpSubtitleName);
+formUpInputs.appendChild(formUpInputsName);
+formUpInputs.appendChild(formUpSubtitleComment);
+formUpInputs.appendChild(formUpInputsComment);
+formUpInputs.appendChild(formUpButton);
 
-//   formUp.appendChild(formUpImage);
-//   formUp.appendChild(formUpInputs);
+formUp.appendChild(formUpImage);
+formUp.appendChild(formUpInputs);
 
-//   formProfile.appendChild(formProfileName);
-//   formProfile.appendChild(formProfileDate);
-//   // console.log(formProfile);
-//   formCommentsInputs.appendChild(formProfile);
-//   formCommentsInputs.appendChild(formComment);
+form.appendChild(formTitle);
+form.appendChild(formUp);
 
-//   formComments.appendChild(formCommentsImage);
-//   formComments.appendChild(formCommentsInputs);
+// ------------------PART DOWN----------------------------
 
-//   form.appendChild(formTitle);
-//   form.appendChild(formUp);
-//   form.appendChild(formComments);
-//   form.appendChild(formLine);
-//   // console.log(formComments);
-//   // console.log(element);
-// }
+function addCard() {
+  const formComments = createElementWithClass("div", "form-comments");
+  const formCommentsImage = createElementWithClass(
+    "img",
+    "form-comments__image"
+  );
+  const formCommentsInputs = createElementWithClass(
+    "div",
+    "form-comments-inputs"
+  );
+  const formComment = createElementWithClass("p", "form__comment");
+  const formProfile = createElementWithClass("div", "form-profile");
+  const formProfileName = createElementWithClass("p", "form-profile__name");
+  const formProfileDate = createElementWithClass("p", "form-profile__date");
+  const formLine = createElementWithClass("hr", "form__line");
 
-// // console.log(form);
+  return;
+}
 
 commentContent.forEach((element) => {
-  formProfileName.innerText = element.author;
-  formProfileDate.innerHTML = element.date;
-  formComment.innerHTML = element.comment;
-  // formCommentsImage.src = element.src;
-  // console.log(element.date);
-  // We've reference the specific element in the array, We've added a date,profilename,innerhtml,formcomment
-  formUpInputs.appendChild(formUpSubtitleName);
-  formUpInputs.appendChild(formUpInputsName);
-  formUpInputs.appendChild(formSubtitleComment);
-  formUpInputs.appendChild(formUpInputsComment);
-  formUpInputs.appendChild(formUpButton);
+  const formComments = createElementWithClass("div", "form-comments");
+  const formCommentsImage = createElementWithClass(
+    "img",
+    "form-comments__image"
+  );
+  const formCommentsInputs = createElementWithClass(
+    "div",
+    "form-comments-inputs"
+  );
+  const formComment = createElementWithClass("p", "form__comment");
+  const formProfile = createElementWithClass("div", "form-profile");
+  const formProfileName = createElementWithClass("p", "form-profile__name");
+  const formProfileDate = createElementWithClass("p", "form-profile__date");
+  const formLine = createElementWithClass("hr", "form__line");
 
-  formUp.appendChild(formUpImage);
-  formUp.appendChild(formUpInputs);
+  formCommentsImage.alt = "Profile-Img";
 
   formProfile.appendChild(formProfileName);
   formProfile.appendChild(formProfileDate);
@@ -137,9 +124,16 @@ commentContent.forEach((element) => {
   formComments.appendChild(formCommentsImage);
   formComments.appendChild(formCommentsInputs);
 
-  form.appendChild(formTitle);
-  form.appendChild(formUp);
   form.appendChild(formComments);
   form.appendChild(formLine);
-  console.log(element);
+
+  formProfileName.innerText = element.author;
+  formProfileDate.innerHTML = element.date;
+  formComment.innerHTML = element.comment;
+
+  addCard();
+
+  // formCommentsImage.src = element.src;
+  // console.log(element.date);
+  // console.log(element);
 });
