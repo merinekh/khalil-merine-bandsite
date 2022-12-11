@@ -168,6 +168,10 @@
     color: $color--primary-white;
     border-radius: 0.4rem;
     padding: 0 3.2rem;
+    border: none;
+    &:active {
+      background-color: black;
+    }
   }
 
   &__line {

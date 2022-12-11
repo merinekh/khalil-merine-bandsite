@@ -60,11 +60,13 @@ formUpSubtitleName.innerHTML = "NAME";
 formUpSubtitleComment.innerHTML = "COMMENT";
 formUpInputsName.placeholder = "Enter your name";
 formUpInputsComment.placeholder = "Add a new comment";
+formUpInputsComment.type = "textarea";
 formUpButton.type = "button";
 formUpButton.value = "COMMENT";
 formUpButton.classList.add("button");
 formUpSubtitleName.classList.add("form-subtitle");
 formUpSubtitleComment.classList.add("form-subtitle");
+formUpImage.src = "../assets/images/Mohan-muruge.jpg";
 
 formUpInputs.appendChild(formUpSubtitleName);
 formUpInputs.appendChild(formUpInputsName);
@@ -79,26 +81,6 @@ form.appendChild(formTitle);
 form.appendChild(formUp);
 
 // ------------------ELEMENT DOWN PART(COMMENTS)----------------------------
-
-function addCard() {
-  const formComments = createElementWithClass("div", "form-comments");
-  const formCommentsImage = createElementWithClass(
-    "img",
-    "form-comments__image"
-  );
-  const formCommentsInputs = createElementWithClass(
-    "div",
-    "form-comments-inputs"
-  );
-  const formComment = createElementWithClass("p", "form__comment");
-  const formProfile = createElementWithClass("div", "form-profile");
-  const formProfileName = createElementWithClass("p", "form-profile__name");
-  const formProfileDate = createElementWithClass("p", "form-profile__date");
-  const formLine = createElementWithClass("hr", "form__line");
-
-  return;
-}
-
 commentContent.forEach((element) => {
   const formComments = createElementWithClass("div", "form-comments");
   const formCommentsImage = createElementWithClass(
@@ -140,6 +122,24 @@ commentContent.forEach((element) => {
   // console.log(element.date);
   // console.log(element);
 });
+function addCard() {
+  const formComments = createElementWithClass("div", "form-comments");
+  const formCommentsImage = createElementWithClass(
+    "img",
+    "form-comments__image"
+  );
+  const formCommentsInputs = createElementWithClass(
+    "div",
+    "form-comments-inputs"
+  );
+  const formComment = createElementWithClass("p", "form__comment");
+  const formProfile = createElementWithClass("div", "form-profile");
+  const formProfileName = createElementWithClass("p", "form-profile__name");
+  const formProfileDate = createElementWithClass("p", "form-profile__date");
+  const formLine = createElementWithClass("hr", "form__line");
+
+  return;
+}
 
 // ------------------DISPLAY NEW COMMENT---------------
 // console.log(formUpButton.click);
@@ -157,13 +157,9 @@ formUpButton.addEventListener("click", (event) => {
       src: newImage,
     },
   ];
-
-  commentContent.unshift(newObj);
-  console.log(newObj, commentContent);
-
-  // alert("Submitted");
-
-  function addComments() {
+  // console.log(formComments);
+  // ------------------ADDDING NEW OBJ----------------------
+  newObj.forEach((element) => {
     const formComments = createElementWithClass("div", "form-comments");
     const formCommentsImage = createElementWithClass(
       "img",
@@ -179,47 +175,30 @@ formUpButton.addEventListener("click", (event) => {
     const formProfileDate = createElementWithClass("p", "form-profile__date");
     const formLine = createElementWithClass("hr", "form__line");
 
-    return;
-  }
+    formCommentsImage.alt = "Profile-Img";
+
+    formProfile.appendChild(formProfileName);
+    formProfile.appendChild(formProfileDate);
+    // console.log(formProfile);
+    formCommentsInputs.appendChild(formProfile);
+    formCommentsInputs.appendChild(formComment);
+    formCommentsInputs.style.width = "100%";
+
+    formComments.appendChild(formCommentsImage);
+    formComments.appendChild(formCommentsInputs);
+
+    formDown.prepend(formLine);
+    formDown.prepend(formComments);
+
+    formProfileName.innerText = element.author;
+    formProfileDate.innerHTML = element.date;
+    formComment.innerHTML = element.comment;
+    formCommentsImage.src = element.src;
+    addCard();
+
+    // console.log(element.date);
+    // console.log(element);
+  });
+
+  alert("Submitted");
 });
-
-// newObj.forEach((element) => {
-//   const formComments = createElementWithClass("div", "form-comments");
-//   const formCommentsImage = createElementWithClass(
-//     "img",
-//     "form-comments__image"
-//   );
-//   const formCommentsInputs = createElementWithClass(
-//     "div",
-//     "form-comments-inputs"
-//   );
-//   const formComment = createElementWithClass("p", "form__comment");
-//   const formProfile = createElementWithClass("div", "form-profile");
-//   const formProfileName = createElementWithClass("p", "form-profile__name");
-//   const formProfileDate = createElementWithClass("p", "form-profile__date");
-//   const formLine = createElementWithClass("hr", "form__line");
-
-//   formCommentsImage.alt = "Profile-Img";
-
-//   formProfile.appendChild(formProfileName);
-//   formProfile.appendChild(formProfileDate);
-//   // console.log(formProfile);
-//   formCommentsInputs.appendChild(formProfile);
-//   formCommentsInputs.appendChild(formComment);
-
-//   formComments.appendChild(formCommentsImage);
-//   formComments.appendChild(formCommentsInputs);
-
-//   form.appendChild(formComments);
-//   form.appendChild(formLine);
-
-//   formProfileName.innerText = element.author;
-//   formProfileDate.innerHTML = element.date;
-//   formComment.innerHTML = element.comment;
-
-//   addCard();
-
-//   formCommentsImage.src = element.src;
-//   // console.log(element.date);
-//   // console.log(element);
-// });

@@ -240,7 +240,7 @@
 .form {
   display: flex;
   flex-direction: column;
-  margin: 0 1.6rem;
+  padding: 0 1.6rem;
 
   &-up {
     display: flex;
@@ -280,7 +280,7 @@
       }
 
       &__comment {
-        min-height: 3.6rem;
+        min-height: 12.6rem;
         padding: 1.2rem;
 
         // &:active {
@@ -288,7 +288,6 @@
         // }
 
         @include tablet {
-          min-height: 4.8rem;
           padding: 1.6rem;
         }
       }
@@ -340,7 +339,30 @@
 
   &-subtitle {
     margin: 0;
+    font-size: 1.2rem;
     color: $color--primary-silver;
+  }
+
+  @include tablet {
+    padding: 2rem 3.6rem;
+    &-up,
+    &-down {
+      width: 80%;
+      margin-left: 10rem;
+    }
+    &__line {
+      width: 100%;
+      margin: 0;
+    }
+  }
+
+  @include desktop {
+    padding: 2.4rem 10rem;
+    &-up,
+    &-down {
+      width: 52%;
+      margin-left: 25rem;
+    }
   }
 }
 .footer {
