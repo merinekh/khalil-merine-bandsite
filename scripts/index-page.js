@@ -34,6 +34,7 @@ const form = document.getElementsByClassName("form")[0];
 // -----------------Element Up Part (FORM)------------------
 const formTitle = createElementWithClass("h2", "form__title");
 const formUp = createElementWithClass("div", "form-up");
+const formDown = createElementWithClass("div", "form-down");
 const formUpImage = createElementWithClass("img", "form-up__image");
 const formUpInputs = createElementWithClass("div", "form-up-inputs");
 const formUpSubtitleName = createElementWithClass(
@@ -125,16 +126,17 @@ commentContent.forEach((element) => {
   formComments.appendChild(formCommentsImage);
   formComments.appendChild(formCommentsInputs);
 
-  form.appendChild(formComments);
-  form.appendChild(formLine);
+  formDown.appendChild(formComments);
+  formDown.appendChild(formLine);
+
+  form.appendChild(formDown);
 
   formProfileName.innerText = element.author;
   formProfileDate.innerHTML = element.date;
   formComment.innerHTML = element.comment;
-
+  formCommentsImage.src = element.src;
   addCard();
 
-  formCommentsImage.src = element.src;
   // console.log(element.date);
   // console.log(element);
 });
@@ -161,7 +163,7 @@ formUpButton.addEventListener("click", (event) => {
 
   // alert("Submitted");
 
-  function addCard() {
+  function addComments() {
     const formComments = createElementWithClass("div", "form-comments");
     const formCommentsImage = createElementWithClass(
       "img",
