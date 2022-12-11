@@ -269,9 +269,9 @@
         min-height: 3.6rem;
         padding: 1.2rem;
 
-        &:active {
-          border-color: #d22d2d;
-        }
+        // &:active {
+        //   border-color: #d22d2d;
+        // }
 
         @include tablet {
           min-height: 4.8rem;
@@ -283,14 +283,19 @@
         min-height: 3.6rem;
         padding: 1.2rem;
 
-        &:active {
-          border-color: #d22d2d;
-        }
+        // &:active {
+        //   border-color: #d22d2d;
+        // }
 
         @include tablet {
           min-height: 4.8rem;
           padding: 1.6rem;
         }
+      }
+    }
+    &__button {
+      &:active {
+        background-color: black;
       }
     }
   }
