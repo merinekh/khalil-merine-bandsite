@@ -230,12 +230,15 @@ p {
   flex-direction: column;
   padding: 0rem 1.6rem 0rem 1.6rem;
 }
+.section-header {
+  display: none;
+}
 .section-cards {
   width: 100%;
   display: flex;
   flex-direction: column;
 }
-.section-date__subtitle, .section-venue__subtitle, .section-location__subtitle {
+.section__subtitle, .section-header {
   color: #afafaf;
 }
 .section__date {
@@ -255,6 +258,7 @@ p {
 .section__line {
   height: 0.1rem;
   color: #e1e1e1;
+  margin-top: 1.6rem;
   margin-left: -1.6rem;
   width: 100vw;
 }
@@ -262,10 +266,20 @@ p {
   .section {
     padding: 2.4rem 3.6rem;
   }
+  .section-header {
+    display: flex;
+  }
+  .section-header p {
+    width: 27%;
+  }
   .section-card {
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    margin: 1.6rem 0;
+  }
+  .section-card div {
+    width: 30%;
+    margin-right: 2rem;
   }
   .section-button {
     max-width: 15rem;
@@ -274,12 +288,16 @@ p {
     display: none;
   }
   .section__line {
-    display: none;
+    margin: 0;
+    width: 100%;
   }
 }
 @media screen and (min-width: 1280px) {
   .section {
     padding: 0 10rem;
+  }
+  .section-header p {
+    width: 28.5%;
   }
 }
 

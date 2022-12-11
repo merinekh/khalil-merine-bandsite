@@ -31,6 +31,8 @@ let shows = [
   },
 ];
 
+section = document.querySelector("section");
+
 // function add element + classname
 const createElementWithClass = (type, className) => {
   let element = document.createElement(type);
@@ -39,55 +41,64 @@ const createElementWithClass = (type, className) => {
 };
 // Creating all the component
 const sectionCards = createElementWithClass("div", "section-cards");
-const sectionCard = createElementWithClass("div", "section-card");
 
+// ------------HEADER TABLET & DESKTOP
 const sectionHeader = createElementWithClass("div", "section-header");
-const sectionDates = createElementWithClass("div", "section-dates");
-const sectionVenues = createElementWithClass("div", "section-venues");
-const sectionLocations = createElementWithClass("div", "section-locations");
-
-const sectionDateSubtitle = createElementWithClass(
+const sectionHeaderDateSubtitle = createElementWithClass(
   "p",
-  "section-date__subtitle"
+  "section-header-date__subtitle"
 );
-const sectionVenueSubtitle = createElementWithClass(
+const sectionHeaderVenueSubtitle = createElementWithClass(
   "p",
-  "section-venue__subtitle"
+  "section-header-venue__subtitle"
 );
-const sectionLocationSubtitle = createElementWithClass(
+const sectionHeaderLocationSubtitle = createElementWithClass(
   "p",
-  "section-location__subtitle"
+  "section-header-location__subtitle"
 );
 
-section = document.querySelector("section");
+sectionHeaderDateSubtitle.innerHTML = "DATE";
+sectionHeaderVenueSubtitle.innerHTML = "VENUE";
+sectionHeaderLocationSubtitle.innerHTML = "LOCATION";
 
-const sectionDate = createElementWithClass("p", "section__date");
-const sectionVenue = createElementWithClass("p", "section__venue");
-const sectionLocation = createElementWithClass("p", "section__location");
-const sectionButton = createElementWithClass("input", "section-button");
-const sectionLine = createElementWithClass("hr", "section__line");
+sectionHeader.appendChild(sectionHeaderDateSubtitle);
+sectionHeader.appendChild(sectionHeaderVenueSubtitle);
+sectionHeader.appendChild(sectionHeaderLocationSubtitle);
 
-sectionDateSubtitle.classList.add("section__subtitle");
-sectionVenueSubtitle.classList.add("section__subtitle");
-sectionLocationSubtitle.classList.add("section__subtitle");
-sectionDateSubtitle.innerHTML = "DATE";
-sectionVenueSubtitle.innerHTML = "VENUE";
-sectionLocationSubtitle.innerHTML = "LOCATION";
+// ----------------Show CARDS--------------------
+shows.forEach((element) => {
+  const sectionCard = createElementWithClass("div", "section-card");
+  const sectionDates = createElementWithClass("div", "section-dates");
+  const sectionVenues = createElementWithClass("div", "section-venues");
+  const sectionLocations = createElementWithClass("div", "section-locations");
 
-sectionButton.type = "button";
-sectionButton.value = "BUY TICKETS";
+  const sectionDateSubtitle = createElementWithClass(
+    "p",
+    "section-date__subtitle"
+  );
+  const sectionVenueSubtitle = createElementWithClass(
+    "p",
+    "section-venue__subtitle"
+  );
+  const sectionLocationSubtitle = createElementWithClass(
+    "p",
+    "section-location__subtitle"
+  );
 
-sectionHeader.appendChild(sectionDateSubtitle);
-sectionHeader.appendChild(sectionVenueSubtitle);
-sectionHeader.appendChild(sectionLocationSubtitle);
-section.appendChild(sectionHeader);
-console.log(sectionHeader);
-let cards = [{}];
+  const sectionDate = createElementWithClass("p", "section__date");
+  const sectionVenue = createElementWithClass("p", "section__venue");
+  const sectionLocation = createElementWithClass("p", "section__location");
+  const sectionButton = createElementWithClass("input", "section-button");
+  const sectionLine = createElementWithClass("hr", "section__line");
 
-for (let i = 0; i < shows.length; i++) {
-  sectionDate.innerHTML = shows[i].date;
-  sectionVenue.innerHTML = shows[i].venue;
-  sectionLocation.innerHTML = shows[i].location;
+  sectionDateSubtitle.classList.add("section__subtitle");
+  sectionVenueSubtitle.classList.add("section__subtitle");
+  sectionLocationSubtitle.classList.add("section__subtitle");
+  sectionDateSubtitle.innerHTML = "DATE";
+  sectionVenueSubtitle.innerHTML = "VENUE";
+  sectionLocationSubtitle.innerHTML = "LOCATION";
+  sectionButton.type = "button";
+  sectionButton.value = "BUY TICKETS";
 
   sectionDates.appendChild(sectionDateSubtitle);
   sectionDates.appendChild(sectionDate);
@@ -100,27 +111,15 @@ for (let i = 0; i < shows.length; i++) {
   sectionCard.appendChild(sectionVenues);
   sectionCard.appendChild(sectionLocations);
   sectionCard.appendChild(sectionButton);
-  sectionCard.appendChild(sectionLine);
+  // sectionCard.appendChild(sectionLine);
 
   sectionCards.appendChild(sectionCard);
+  sectionCards.appendChild(sectionLine);
 
-  section.appendChild(sectionCards);
-  console.log(sectionCards);
-}
-
-console.log(sectionCards);
-
-// for (let i = 0; i < shows.length; i++) {
-//   const showsItem = shows[i];
-// }
-//     let petName = document.createElement("h3");
-//     petName.classList.add("pet__name");
-//     petName.innerText = petItem.name;
-
-//     let petBio = document.createElement("p");
-//     petBio.classList.add("pet__bio");
-//     petBio.innerText = petItem.bio;
-
-//     pet.appendChild(petName);
-//     pet.appendChild(petBio);
-//     petsContainer.appendChild(pet);
+  sectionDate.innerHTML = element.date;
+  sectionVenue.innerHTML = element.venue;
+  sectionLocation.innerHTML = element.location;
+  // console.log(element);
+});
+section.appendChild(sectionHeader);
+section.appendChild(sectionCards);

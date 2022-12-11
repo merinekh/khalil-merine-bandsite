@@ -140,15 +140,17 @@
   flex-direction: column;
   padding: 0rem 1.6rem 0rem 1.6rem;
 
+  &-header {
+    display: none;
+  }
   &-cards {
     width: 100%;
     display: flex;
     flex-direction: column;
   }
 
-  &-date__subtitle,
-  &-venue__subtitle,
-  &-location__subtitle {
+  &__subtitle,
+  &-header {
     color: $color--primary-silver;
   }
 
@@ -171,6 +173,7 @@
   &__line {
     height: 0.1rem;
     color: $color--secondary-silver;
+    margin-top: 1.6rem;
     margin-left: -1.6rem;
     width: 100vw;
   }
@@ -178,10 +181,21 @@
   @include tablet {
     padding: 2.4rem 3.6rem;
 
+    &-header {
+      display: flex;
+      p {
+        width: 27%;
+      }
+    }
     &-card {
       display: flex;
-      justify-content: space-between;
       align-items: center;
+      margin: 1.6rem 0;
+
+      div {
+        width: 30%;
+        margin-right: 2rem;
+      }
     }
 
     &-button {
@@ -192,12 +206,18 @@
       display: none;
     }
     &__line {
-      display: none;
+      margin: 0;
+      width: 100%;
     }
   }
 
   @include desktop {
     padding: 0 10rem;
+    &-header {
+      p {
+        width: 28.5%;
+      }
+    }
   }
 }
 

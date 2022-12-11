@@ -28,9 +28,10 @@ const commentContent = [
   },
 ];
 
-// console.log(commentContent);
+// -----------------SELECT FORM----------------------
 const form = document.getElementsByClassName("form")[0];
 
+// -----------------Element Up Part (FORM)------------------
 const formTitle = createElementWithClass("h2", "form__title");
 const formUp = createElementWithClass("div", "form-up");
 const formUpImage = createElementWithClass("img", "form-up__image");
@@ -76,7 +77,7 @@ formUp.appendChild(formUpInputs);
 form.appendChild(formTitle);
 form.appendChild(formUp);
 
-// ------------------PART DOWN----------------------------
+// ------------------ELEMENT DOWN PART(COMMENTS)----------------------------
 
 function addCard() {
   const formComments = createElementWithClass("div", "form-comments");
