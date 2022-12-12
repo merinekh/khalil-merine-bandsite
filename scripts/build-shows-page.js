@@ -43,6 +43,7 @@ const createElementWithClass = (type, className) => {
 const sectionCards = createElementWithClass("div", "section-cards");
 
 // ------------HEADER TABLET & DESKTOP
+const sectionDown = createElementWithClass("div", "section-down");
 const sectionHeader = createElementWithClass("div", "section-header");
 const sectionHeaderDateSubtitle = createElementWithClass(
   "p",
@@ -121,5 +122,6 @@ shows.forEach((element) => {
   sectionLocation.innerHTML = element.location;
   // console.log(element);
 });
-section.appendChild(sectionHeader);
-section.appendChild(sectionCards);
+sectionDown.appendChild(sectionHeader);
+sectionDown.appendChild(sectionCards);
+section.appendChild(sectionDown);

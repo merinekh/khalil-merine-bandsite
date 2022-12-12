@@ -141,9 +141,10 @@ function addCard() {
   return;
 }
 
-// ------------------DISPLAY NEW COMMENT---------------
-// console.log(formUpButton.click);
+// -----------------------------------------------------------------------------
+// // ------------------ADDDING NEW OBJECT USING PREPEND----------------------
 formUpButton.addEventListener("click", (event) => {
+  // event.preventDefault();  -----DO NOT WORK WITH "SUBMIT" SO HAD TO DO IT WITH "CLICK"
   const newName = formUpInputsName.value;
   const newComment = formUpInputsComment.value;
   const newImage = formUpImage.src;
@@ -200,5 +201,116 @@ formUpButton.addEventListener("click", (event) => {
     // console.log(element);
   });
 
-  alert("Submitted");
+  // alert("Submitted");
 });
+
+// ---------------SUBMIT LISTENER AS ASKED IN THE ASSIGNEMENT---------------------------------------------------
+// ---------------------------------------------------------------------------------
+// { CODE NOT WORKING PROBLEM WHEN RENDERING AFTER THE FIRST SUBMITION renders multiple time Form-down
+
+// formUpButton.addEventListener("submit", (event) => {
+//   // event.preventDefault();  -----DO NOT WORK WITH "SUBMIT" SO HAD TO DO IT WITH "CLICK"
+
+//   const newName = formUpInputsName.value;
+//   const newComment = formUpInputsComment.value;
+//   const newImage = formUpImage.src;
+//   const newDate = new Date().toLocaleDateString();
+
+// let newObj = {
+//   author: newName,
+//   comment: newComment,
+//   date: newDate,
+//   src: newImage,
+// };
+// commentContent.push(newObj);
+// // ------------------Form remove child----------------------------------------------
+// let parent = document.getElementsByClassName("form-down")[0];
+// parent.remove();
+// // ------------------SORT ARRAY-------------------------------------------------
+// let NewCommentContent = commentContent.sort(
+//   (a, b) => new Date(b.date) - new Date(a.date)
+// );
+// console.log(NewCommentContent);
+// // ------------------Adding New comment--------------------------------------------
+// // NewCommentContent.forEach((element) => {
+// //   const formComments = createElementWithClass("div", "form-comments");
+// //   const formCommentsImage = createElementWithClass(
+// //     "img",
+// //     "form-comments__image"
+// //   );
+// //   const formCommentsInputs = createElementWithClass(
+// //     "div",
+// //     "form-comments-inputs"
+// //   );
+// //   const formComment = createElementWithClass("p", "form__comment");
+// //   const formProfile = createElementWithClass("div", "form-profile");
+// //   const formProfileName = createElementWithClass("p", "form-profile__name");
+// //   const formProfileDate = createElementWithClass("p", "form-profile__date");
+// //   const formLine = createElementWithClass("hr", "form__line");
+// //   formCommentsImage.alt = "Profile-Img";
+// //   formProfile.appendChild(formProfileName);
+// //   formProfile.appendChild(formProfileDate);
+// //   // console.log(formProfile);
+// //   formCommentsInputs.appendChild(formProfile);
+// //   formCommentsInputs.appendChild(formComment);
+// //   formComments.appendChild(formCommentsImage);
+// //   formComments.appendChild(formCommentsInputs);
+// //   formDown.appendChild(formComments);
+// //   formDown.appendChild(formLine);
+// //   // form.appendChild(formDown);
+// //   console.log(formDown);
+// //   formProfileName.innerText = element.author;
+// //   formProfileDate.innerHTML = element.date;
+// //   formComment.innerHTML = element.comment;
+// //   formCommentsImage.src = element.src;
+// //   addCard();
+// //   // console.log(element.date);
+// //   // console.log(element);
+// // });
+// console.log(NewCommentContent);
+// }
+
+// -----------------------------------------------------------------------------------
+// -----------------------------------------------------------------------------
+// // ------------------ADDDING NEW OBJECT USING PREPEND----------------------
+
+//   const formComments = createElementWithClass("div", "form-comments");
+//   const formCommentsImage = createElementWithClass(
+//     "img",
+//     "form-comments__image"
+//   );
+//   const formCommentsInputs = createElementWithClass(
+//     "div",
+//     "form-comments-inputs"
+//   );
+//   const formComment = createElementWithClass("p", "form__comment");
+//   const formProfile = createElementWithClass("div", "form-profile");
+//   const formProfileName = createElementWithClass("p", "form-profile__name");
+//   const formProfileDate = createElementWithClass("p", "form-profile__date");
+//   const formLine = createElementWithClass("hr", "form__line");
+
+//   formCommentsImage.alt = "Profile-Img";
+
+//   formProfile.appendChild(formProfileName);
+//   formProfile.appendChild(formProfileDate);
+//   // console.log(formProfile);
+//   formCommentsInputs.appendChild(formProfile);
+//   formCommentsInputs.appendChild(formComment);
+//   formCommentsInputs.style.width = "100%";
+
+//   formComments.appendChild(formCommentsImage);
+//   formComments.appendChild(formCommentsInputs);
+
+//   formDown.prepend(formLine);
+//   formDown.prepend(formComments);
+
+//   formProfileName.innerText = element.author;
+//   formProfileDate.innerHTML = element.date;
+//   formComment.innerHTML = element.comment;
+//   formCommentsImage.src = element.src;
+//   addCard();
+
+//   // console.log(element.date);
+//   // console.log(element);
+// });
+// });

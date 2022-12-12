@@ -230,7 +230,9 @@
   }
 
   @include desktop {
+    // flex-direction: row;
     padding: 0 10rem;
+
     &-header {
       width: 80vw;
       p {
