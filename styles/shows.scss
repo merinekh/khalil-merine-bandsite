@@ -98,6 +98,11 @@
         ),
         url(../assets/images/hero-shows.jpg);
       background-size: cover;
+
+      @include desktop {
+        flex-direction: row;
+        align-items: center;
+      }
     }
 
     &-text,
@@ -112,7 +117,8 @@
       }
       @include desktop {
         font-size: 6rem;
-        margin: 0 8rem;
+        margin: 0 10rem;
+        width: 80%;
       }
     }
 
@@ -148,7 +154,11 @@
     display: flex;
     flex-direction: column;
   }
-
+  &-card {
+    &:active {
+      background-color: $color--secondary-white;
+    }
+  }
   &__subtitle,
   &-header {
     color: $color--primary-silver;
@@ -187,18 +197,22 @@
 
     &-header {
       display: flex;
+      width: 71vw;
       p {
-        width: 27%;
+        width: 25vw;
       }
     }
     &-card {
       display: flex;
       align-items: center;
-      margin: 1.6rem 0;
+      padding: 1.6rem 0;
 
       div {
         width: 30%;
-        margin-right: 2rem;
+      }
+
+      &:hover {
+        background-color: $color--secondary-silver;
       }
     }
 
@@ -218,8 +232,9 @@
   @include desktop {
     padding: 0 10rem;
     &-header {
+      width: 80vw;
       p {
-        width: 28.5%;
+        width: 24vw;
       }
     }
   }

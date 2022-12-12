@@ -191,6 +191,12 @@ p {
   background-image: linear-gradient(rgba(50, 50, 50, 0.5) 0%, rgba(50, 50, 50, 0.5) 80%), url(../assets/images/hero-shows.jpg);
   background-size: cover;
 }
+@media screen and (min-width: 1280px) {
+  .main-hero-image {
+    flex-direction: row;
+    align-items: center;
+  }
+}
 .main-hero-text, .main-hero__iframe {
   margin-left: 1.6rem;
   color: #ffffff;
@@ -204,7 +210,8 @@ p {
 @media screen and (min-width: 1280px) {
   .main-hero-text, .main-hero__iframe {
     font-size: 6rem;
-    margin: 0 8rem;
+    margin: 0 10rem;
+    width: 80%;
   }
 }
 @media screen and (min-width: 768px) {
@@ -237,6 +244,9 @@ p {
   width: 100%;
   display: flex;
   flex-direction: column;
+}
+.section-card:active {
+  background-color: #fafafa;
 }
 .section__subtitle, .section-header {
   color: #afafaf;
@@ -272,18 +282,21 @@ p {
   }
   .section-header {
     display: flex;
+    width: 71vw;
   }
   .section-header p {
-    width: 27%;
+    width: 25vw;
   }
   .section-card {
     display: flex;
     align-items: center;
-    margin: 1.6rem 0;
+    padding: 1.6rem 0;
   }
   .section-card div {
     width: 30%;
-    margin-right: 2rem;
+  }
+  .section-card:hover {
+    background-color: #e1e1e1;
   }
   .section-button {
     max-width: 15rem;
@@ -300,8 +313,11 @@ p {
   .section {
     padding: 0 10rem;
   }
+  .section-header {
+    width: 80vw;
+  }
   .section-header p {
-    width: 28.5%;
+    width: 24vw;
   }
 }
 
