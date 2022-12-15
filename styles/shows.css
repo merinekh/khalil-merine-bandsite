@@ -104,6 +104,10 @@ p {
   border-radius: 0.4rem;
 }
 
+* textarea {
+  font-family: "Avenir next";
+}
+
 .header {
   background-color: #323232;
 }

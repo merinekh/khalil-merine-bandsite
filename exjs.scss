@@ -237,61 +237,59 @@
     }
   }
 }
-.section-form {
-  padding: 1.6rem;
-  &-main {
+.form {
+  display: flex;
+  flex-direction: column;
+  padding: 0 1.6rem;
+
+  &-up {
     display: flex;
-  }
-
-  * img {
-    width: 5rem;
-    height: 5rem;
-    border-radius: 50%;
-    margin-right: 1.6rem;
-  }
-
-  &-subtitle {
-    margin: 0;
-    font-size: 1.2rem;
-    color: $color--primary-silver;
-  }
-
-  &-inputs {
-    display: flex;
-    flex-direction: column;
-    width: 90%;
-
-    input,
-    textarea {
-      margin-bottom: 1.6rem;
-      border-radius: 0.4rem;
-      border: $color--secondary-silver solid 0.1rem;
+    &__image {
+      background-image: url("../assets/images/Mohan-muruge.jpg");
+      background-size: cover;
+      width: 4rem;
+      height: 4rem;
+      border-radius: 100%;
+      margin: 1.6rem 0;
+      margin-right: 1.6rem;
     }
 
-    &__name {
-      min-height: 3.6rem;
-      padding: 1.2rem;
+    &-inputs {
+      display: flex;
+      flex-direction: column;
+      width: 90%;
 
-      // &:active {
-      //   border-color: #d22d2d;
-      // }
-
-      @include tablet {
-        min-height: 4.8rem;
-        padding: 1.6rem;
+      input {
+        margin-bottom: 1.6rem;
+        border-radius: 0.4rem;
+        border: $color--secondary-silver solid 0.1rem;
       }
-    }
 
-    &__comment {
-      min-height: 12.6rem;
-      padding: 1.2rem;
+      &__name {
+        min-height: 3.6rem;
+        padding: 1.2rem;
 
-      // &:active {
-      //   border-color: #d22d2d;
-      // }
+        // &:active {
+        //   border-color: #d22d2d;
+        // }
 
-      @include tablet {
-        padding: 1.6rem;
+        @include tablet {
+          min-height: 4.8rem;
+          padding: 1.6rem;
+        }
+      }
+
+      &__comment {
+        min-height: 12.6rem;
+        padding: 1.2rem;
+
+        // &:active {
+        //   border-color: #d22d2d;
+        // }
+
+        @include tablet {
+          padding: 1.6rem;
+        }
       }
     }
     &__button {
@@ -301,27 +299,71 @@
     }
   }
 
-  // @include tablet {
-  //   padding: 2rem 3.6rem;
-  //   &-up,
-  //   &-down {
-  //     width: 80%;
-  //     margin-left: 10rem;
-  //   }
-  //   &__line {
-  //     width: 100%;
-  //     margin: 0;
-  //   }
-  // }
+  &-comments {
+    display: flex;
 
-  // @include desktop {
-  //   padding: 2.4rem 10rem;
-  //   &-up,
-  //   &-down {
-  //     width: 52%;
-  //     margin-left: 25rem;
-  //   }
-  // }
+    &__image {
+      background-color: $color--primary-silver;
+      width: 4rem;
+      height: 4rem;
+      border-radius: 100%;
+      margin: 1.6rem 0;
+      margin-right: 1.6rem;
+    }
+
+    &-inputs {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  &-profile {
+    display: flex;
+    justify-content: space-between;
+
+    &__name {
+      font-weight: 600;
+    }
+
+    &__date {
+      color: $color--primary-silver;
+    }
+  }
+
+  &__line {
+    height: 0.1rem;
+    color: $color--secondary-silver;
+    margin-left: -1.6rem;
+    width: 100vw;
+  }
+
+  &-subtitle {
+    margin: 0;
+    font-size: 1.2rem;
+    color: $color--primary-silver;
+  }
+
+  @include tablet {
+    padding: 2rem 3.6rem;
+    &-up,
+    &-down {
+      width: 80%;
+      margin-left: 10rem;
+    }
+    &__line {
+      width: 100%;
+      margin: 0;
+    }
+  }
+
+  @include desktop {
+    padding: 2.4rem 10rem;
+    &-up,
+    &-down {
+      width: 52%;
+      margin-left: 25rem;
+    }
+  }
 }
 .footer {
   display: flex;

@@ -104,6 +104,10 @@ p {
   border-radius: 0.4rem;
 }
 
+* textarea {
+  font-family: "Avenir next";
+}
+
 .header {
   background-color: #323232;
 }
@@ -315,112 +319,55 @@ p {
   }
 }
 
-.form {
-  display: flex;
-  flex-direction: column;
-  padding: 0 1.6rem;
+.section-form {
+  padding: 1.6rem;
 }
-.form-up {
+.section-form-main {
   display: flex;
 }
-.form-up__image {
-  background-image: url("../assets/images/Mohan-muruge.jpg");
-  background-size: cover;
-  width: 4rem;
-  height: 4rem;
-  border-radius: 100%;
-  margin: 1.6rem 0;
+.section-form * img {
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
   margin-right: 1.6rem;
 }
-.form-up-inputs {
-  display: flex;
-  flex-direction: column;
-  width: 90%;
-}
-.form-up-inputs input {
-  margin-bottom: 1.6rem;
-  border-radius: 0.4rem;
-  border: #e1e1e1 solid 0.1rem;
-}
-.form-up-inputs__name {
-  min-height: 3.6rem;
-  padding: 1.2rem;
-}
-@media screen and (min-width: 768px) {
-  .form-up-inputs__name {
-    min-height: 4.8rem;
-    padding: 1.6rem;
-  }
-}
-.form-up-inputs__comment {
-  min-height: 12.6rem;
-  padding: 1.2rem;
-}
-@media screen and (min-width: 768px) {
-  .form-up-inputs__comment {
-    padding: 1.6rem;
-  }
-}
-.form-up__button:active {
-  background-color: black;
-}
-.form-comments {
-  display: flex;
-}
-.form-comments__image {
-  background-color: #afafaf;
-  width: 4rem;
-  height: 4rem;
-  border-radius: 100%;
-  margin: 1.6rem 0;
-  margin-right: 1.6rem;
-}
-.form-comments-inputs {
-  display: flex;
-  flex-direction: column;
-}
-.form-profile {
-  display: flex;
-  justify-content: space-between;
-}
-.form-profile__name {
-  font-weight: 600;
-}
-.form-profile__date {
-  color: #afafaf;
-}
-.form__line {
-  height: 0.1rem;
-  color: #e1e1e1;
-  margin-left: -1.6rem;
-  width: 100vw;
-}
-.form-subtitle {
+.section-form-subtitle {
   margin: 0;
   font-size: 1.2rem;
   color: #afafaf;
 }
+.section-form-inputs {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+}
+.section-form-inputs input,
+.section-form-inputs textarea {
+  margin-bottom: 1.6rem;
+  border-radius: 0.4rem;
+  border: #e1e1e1 solid 0.1rem;
+}
+.section-form-inputs__name {
+  min-height: 3.6rem;
+  padding: 1.2rem;
+}
 @media screen and (min-width: 768px) {
-  .form {
-    padding: 2rem 3.6rem;
-  }
-  .form-up, .form-down {
-    width: 80%;
-    margin-left: 10rem;
-  }
-  .form__line {
-    width: 100%;
-    margin: 0;
+  .section-form-inputs__name {
+    min-height: 4.8rem;
+    padding: 1.6rem;
   }
 }
-@media screen and (min-width: 1280px) {
-  .form {
-    padding: 2.4rem 10rem;
+.section-form-inputs__comment {
+  min-height: 12.6rem;
+  padding: 1.2rem;
+}
+@media screen and (min-width: 768px) {
+  .section-form-inputs__comment {
+    padding: 1.6rem;
   }
-  .form-up, .form-down {
-    width: 52%;
-    margin-left: 25rem;
-  }
+}
+.section-form-inputs__button:active {
+  background-color: black;
 }
 
 .footer {
