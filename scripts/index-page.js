@@ -29,23 +29,29 @@ const commentContent = [
 ];
 
 // -----------------SELECT FORM----------------------
-const form = document.getElementsByClassName("form")[0];
-
-commentContent.forEach((element) => {
-  const formComments = createElementWithClass("div", "form-comments");
+const form = document.getElementsByClassName("form-comments")[0];
+// ------FUNCTION THAT CREATE COMMENTS SECTION----------------------
+function addCard(element) {
+  const formComments = createElementWithClass("div", "section-form-comments");
   const formCommentsImage = createElementWithClass(
     "img",
-    "form-comments__image"
+    "section-form-comments__image"
   );
   const formCommentsInputs = createElementWithClass(
     "div",
-    "form-comments-inputs"
+    "section-form-comments-inputs"
   );
   const formComment = createElementWithClass("p", "form__comment");
-  const formProfile = createElementWithClass("div", "form-profile");
-  const formProfileName = createElementWithClass("p", "form-profile__name");
-  const formProfileDate = createElementWithClass("p", "form-profile__date");
-  const formLine = createElementWithClass("hr", "form__line");
+  const formProfile = createElementWithClass("div", "section-form-profile");
+  const formProfileName = createElementWithClass(
+    "p",
+    "section-form-profile__name"
+  );
+  const formProfileDate = createElementWithClass(
+    "p",
+    "section-form-profile__date"
+  );
+  const formLine = createElementWithClass("hr", "section-form__line");
 
   formCommentsImage.alt = "Profile-Img";
 
@@ -57,36 +63,19 @@ commentContent.forEach((element) => {
 
   formComments.appendChild(formCommentsImage);
   formComments.appendChild(formCommentsInputs);
-
-  formDown.appendChild(formComments);
-  formDown.appendChild(formLine);
-
-  form.appendChild(formDown);
+  console.log(formComments);
+  form.appendChild(formComments);
+  form.appendChild(formLine);
 
   formProfileName.innerText = element.author;
   formProfileDate.innerHTML = element.date;
   formComment.innerHTML = element.comment;
   formCommentsImage.src = element.src;
-  addCard();
+}
 
+// ------PASSING THRU EACH ELEMENT OF THE COMMENTCONTENT ARRAY------
+commentContent.forEach((element) => {
+  addCard(element);
   // console.log(element.date);
   // console.log(element);
 });
-function addCard() {
-  const formComments = createElementWithClass("div", "form-comments");
-  const formCommentsImage = createElementWithClass(
-    "img",
-    "form-comments__image"
-  );
-  const formCommentsInputs = createElementWithClass(
-    "div",
-    "form-comments-inputs"
-  );
-  const formComment = createElementWithClass("p", "form__comment");
-  const formProfile = createElementWithClass("div", "form-profile");
-  const formProfileName = createElementWithClass("p", "form-profile__name");
-  const formProfileDate = createElementWithClass("p", "form-profile__date");
-  const formLine = createElementWithClass("hr", "form__line");
-
-  return;
-}

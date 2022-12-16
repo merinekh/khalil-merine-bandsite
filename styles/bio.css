@@ -369,6 +369,61 @@ p {
 .section-form-inputs__button:active {
   background-color: black;
 }
+.section-form-comments {
+  display: flex;
+}
+.section-form-comments__image {
+  background-color: #afafaf;
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+  margin: 1.6rem 0;
+  margin-right: 1.6rem;
+}
+.section-form-comments-inputs {
+  display: flex;
+  flex-direction: column;
+}
+.section-form-profile {
+  display: flex;
+  justify-content: space-between;
+}
+.section-form-profile__name {
+  font-weight: 600;
+}
+.section-form-profile__date {
+  color: #afafaf;
+}
+.section-form__line {
+  height: 0.1rem;
+  color: #e1e1e1;
+  margin-left: -1.6rem;
+  width: 100vw;
+}
+@media screen and (min-width: 768px) {
+  .section-form {
+    padding: 2rem 3.6rem;
+  }
+  .section-form-main,
+.section-form .form-comments {
+    width: 80%;
+    margin-left: 10rem;
+  }
+  .section-form__line {
+    width: 100%;
+    margin: 0;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .section-form {
+    padding: 2.4rem 10rem;
+  }
+  .section-form-main,
+.section-form .form-comments {
+    width: 52%;
+    margin-left: 25rem;
+  }
+}
 
 .footer {
   display: flex;
