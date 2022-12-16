@@ -244,10 +244,11 @@
   }
 
   * img {
-    width: 5rem;
-    height: 5rem;
+    width: 4rem;
+    height: 4rem;
     border-radius: 50%;
     margin-right: 1.6rem;
+    margin-top: 1.6rem;
   }
 
   &-subtitle {
@@ -329,22 +330,13 @@
       color: $color--primary-silver;
     }
   }
-  &__line {
-    height: 0.1rem;
-    color: $color--secondary-silver;
-    margin-left: -1.6rem;
-    width: 100vw;
-  }
+
   @include tablet {
     padding: 2rem 3.6rem;
     &-main,
     .form-comments {
       width: 80%;
       margin-left: 10rem;
-    }
-    &__line {
-      width: 100%;
-      margin: 0;
     }
   }
 
