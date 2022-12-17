@@ -81,8 +81,12 @@ p {
   background-color: $color--primary-black;
   color: $color--primary-white;
   border-radius: 0.4rem;
+
+  &:hover {
+    background-color: black;
+  }
 }
 
-*textarea {
+* textarea {
   font-family: "Avenir next";
 }

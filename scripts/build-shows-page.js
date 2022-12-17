@@ -98,6 +98,7 @@ shows.forEach((element) => {
   sectionDateSubtitle.innerHTML = "DATE";
   sectionVenueSubtitle.innerHTML = "VENUE";
   sectionLocationSubtitle.innerHTML = "LOCATION";
+  sectionButton.classList.add("button");
   sectionButton.type = "button";
   sectionButton.value = "BUY TICKETS";
 

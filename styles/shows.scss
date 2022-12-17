@@ -32,6 +32,9 @@
         }
 
         &:hover {
+          border-bottom: 0.3rem solid $color--primary-white;
+        }
+        &:active {
           width: 50%;
           background-color: $color--secondary-black;
           font-weight: bold;
@@ -179,9 +182,6 @@
     border-radius: 0.4rem;
     padding: 0 3.2rem;
     border: none;
-    &:active {
-      background-color: black;
-    }
   }
 
   &__line {

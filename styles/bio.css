@@ -103,6 +103,9 @@ p {
   color: #ffffff;
   border-radius: 0.4rem;
 }
+.button:hover {
+  background-color: black;
+}
 
 * textarea {
   font-family: "Avenir next";
@@ -136,6 +139,9 @@ p {
   border-bottom: 0.3rem solid #ffffff;
 }
 .header-items .navbar__link:hover {
+  border-bottom: 0.3rem solid #ffffff;
+}
+.header-items .navbar__link:active {
   width: 50%;
   background-color: #000000;
   font-weight: bold;
@@ -366,9 +372,6 @@ p {
   .section-form-inputs__comment {
     padding: 1.6rem;
   }
-}
-.section-form-inputs__button:active {
-  background-color: black;
 }
 .section-form-comments {
   display: flex;

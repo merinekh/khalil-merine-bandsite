@@ -30,8 +30,10 @@
           color: $color--primary-white;
           border-bottom: 0.3rem solid $color--primary-white;
         }
-
         &:hover {
+          border-bottom: 0.3rem solid $color--primary-white;
+        }
+        &:active {
           width: 50%;
           background-color: $color--secondary-black;
           font-weight: bold;
@@ -293,11 +295,6 @@
 
       @include tablet {
         padding: 1.6rem;
-      }
-    }
-    &__button {
-      &:active {
-        background-color: black;
       }
     }
   }
