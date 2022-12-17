@@ -31,7 +31,7 @@ const commentContent = [
 // -----------------SELECT FORM----------------------
 const form = document.getElementsByClassName("form-comments")[0];
 // ------FUNCTION THAT CREATE COMMENTS SECTION----------------------
-function addCard(element) {
+addCard = (element) => {
   const formComments = createElementWithClass("div", "section-form-comments");
   const formCommentsImage = createElementWithClass(
     "img",
@@ -60,7 +60,7 @@ function addCard(element) {
   // console.log(formProfile);
   formCommentsInputs.appendChild(formProfile);
   formCommentsInputs.appendChild(formComment);
-
+  formCommentsInputs.style.width = "100%";
   formComments.appendChild(formCommentsImage);
   formComments.appendChild(formCommentsInputs);
   // console.log(formComments);
@@ -71,7 +71,7 @@ function addCard(element) {
   formProfileDate.innerHTML = element.date;
   formComment.innerHTML = element.comment;
   formCommentsImage.src = element.src;
-}
+};
 
 // ------PASSING THRU EACH ELEMENT OF THE COMMENTCONTENT ARRAY------
 commentContent.forEach((element) => {
@@ -87,13 +87,16 @@ itemForm.addEventListener("submit", function (event) {
   event.preventDefault();
 
   function deleteComments() {
-    formComments = document.getElementsByClassName("form-comments")[0];
+    formComments = document.querySelector(".section-form-comments");
+    formLine = document.querySelectorAll("hr")[0];
+    console.log(formLine);
     formComments.remove();
-
-    // console.log(commentContent);
+    formLine.remove();
   }
-  deleteComments();
-  // -------Get inputs---------
+  commentContent.forEach((element) => {
+    deleteComments();
+  });
+  // --------------------Get inputs---------
   let newName = document.getElementsByClassName("section-form-inputs__name")[0]
     .value;
   let newComment = document.getElementsByClassName(
@@ -110,59 +113,16 @@ itemForm.addEventListener("submit", function (event) {
   commentContent.push(newObj);
 
   // ------------------SORT ARRAY-------------------------------------------------
-  let newCommentContent = commentContent.sort(
-    (a, b) => new Date(b.date) - new Date(a.date)
-  );
+  commentContent.sort((a, b) => new Date(b.date) - new Date(a.date));
   // console.log(commentContent);
 
-  // console.log(itemForm);
+  // console.log(addCard(commentContent));
 
-  newCommentContent.forEach((element) => {
-    console.log(element);
-    function addCard(element) {
-      const formComments = createElementWithClass(
-        "div",
-        "section-form-comments"
-      );
-      const formCommentsImage = createElementWithClass(
-        "img",
-        "section-form-comments__image"
-      );
-      const formCommentsInputs = createElementWithClass(
-        "div",
-        "section-form-comments-inputs"
-      );
-      const formComment = createElementWithClass("p", "form__comment");
-      const formProfile = createElementWithClass("div", "section-form-profile");
-      const formProfileName = createElementWithClass(
-        "p",
-        "section-form-profile__name"
-      );
-      const formProfileDate = createElementWithClass(
-        "p",
-        "section-form-profile__date"
-      );
-      const formLine = createElementWithClass("hr", "section-form__line");
-
-      formCommentsImage.alt = "Profile-Img";
-
-      formProfile.appendChild(formProfileName);
-      formProfile.appendChild(formProfileDate);
-      // console.log(formProfile);
-      formCommentsInputs.appendChild(formProfile);
-      formCommentsInputs.appendChild(formComment);
-
-      formComments.appendChild(formCommentsImage);
-      formComments.appendChild(formCommentsInputs);
-      // console.log(formComments);
-      form.appendChild(formComments);
-      form.appendChild(formLine);
-
-      formProfileName.innerText = element.author;
-      formProfileDate.innerHTML = element.date;
-      formComment.innerHTML = element.comment;
-      formCommentsImage.src = element.src;
-    }
+  // // ------------------APPLY CODE FOR NEW ARRAY COMMENTCONTENT-------------------------------------------------
+  commentContent.forEach((element) => {
+    addCard(element);
+    // console.log(element);
+    // console.log(addCard(element));
   });
 });
 
