@@ -114,6 +114,10 @@ itemForm.addEventListener("submit", function (event) {
     timestamp: newDate,
     src: newAvatar,
   };
+  let commentObject = {
+    name: newName,
+    comment: newComment,
+  };
   newCommentContent.push(newObj);
 
   // ------------------SORT ARRAY-------------------------------------------------
@@ -129,19 +133,18 @@ itemForm.addEventListener("submit", function (event) {
   });
 
   // -----------------------------WEB API----------------------------
-  const newApi = `${usersURL}${myPage[0]}${myKey}`;
   // console.log(api);
-  // const CommentPost = axios
-  //   .post(newApi, JSON.stringify(newObj))
-  //   .then((response) => {
-  //     console.log("New Comment Added");
-  //   })
-  //   .catch((error) => {
-  //     console.log(error);
-  //   });
+  const CommentPost = axios
+    .post(api, commentObject)
+    .then((response) => {
+      console.log("New Comment Added");
+    })
+    .catch((error) => {
+      console.log(error);
+    });
 });
 // console.log(CommentContent);
 // ----------------------------------------------------------------
 // const formLine = createElementWithClass("hr", "section-form__line");
 // form.prepend(formLine);
-console.log(form);
+// console.log(form);
