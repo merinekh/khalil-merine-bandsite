@@ -4,7 +4,7 @@ const createElementWithClass = (type, className) => {
   return element;
 };
 
-// -----------------------------WEB API--------------------------
+// -----------------------------WEB API----------------------------
 const usersURL = "https://project-1-api.herokuapp.com/";
 const myKey = "?api_key=c71dd9a6-0d71-4306-b904-6cea084f1404";
 const myPage = ["register", "comments", "showdates"];
@@ -15,13 +15,14 @@ const CommentContent = axios.get(api).then((response) => {
   // console.log(data);
   data.forEach((element) => {
     addCard(element);
+    newCommentContent.push(element);
     // console.log(element.date);
     // console.log(element);
   });
 });
-console.log(CommentContent);
+// console.log(CommentContent);
 // ----------------------------------------------------------------
-let commentContent = [];
+let newCommentContent = [];
 
 // -----------------SELECT FORM----------------------
 const form = document.getElementsByClassName("form-comments")[0];
@@ -62,40 +63,40 @@ addCard = (element) => {
   form.appendChild(formComments);
   form.appendChild(formLine);
 
-  let ts = new Date(element.timestamp);
+  if (typeof element.timestamp === "number") {
+    let ts = new Date(element.timestamp);
+    formProfileDate.innerText = ts.toLocaleDateString();
+  } else {
+    formProfileDate.innerText = element.timestamp;
+  }
+
   formProfileName.innerText = element.name;
-  formProfileDate.innerHTML = ts.toLocaleDateString();
-  formComment.innerHTML = element.comment;
+  formComment.innerText = element.comment;
   formCommentsImage.src = element.src;
-  console.log(element.timestamp);
+  // console.log(element.timestamp);
 };
 
 // ------PASSING THRU EACH ELEMENT OF THE COMMENTCONTENT ARRAY------
-commentContent.forEach((element) => {
+newCommentContent.forEach((element) => {
   addCard(element);
   // console.log(element);
 });
-function loadComments(comments) {
-  comments.forEach((element) => {
-    addCard(element);
-    // console.log(element.date);
-    // console.log(element);
-  });
-}
+
 // -------------Event Listener-----------
 const itemForm = document.getElementsByClassName("section-form-main")[0];
 
 itemForm.addEventListener("submit", function (event) {
   event.preventDefault();
 
+  // --------------DELETE PREVIOUS COMMENTS-------------------------
   function deleteComments() {
     formComments = document.querySelector(".section-form-comments");
     formLine = document.querySelectorAll("hr")[0];
-    console.log(formLine);
+    // console.log(formLine);
     formComments.remove();
     formLine.remove();
   }
-  commentContent.forEach((element) => {
+  newCommentContent.forEach((element) => {
     deleteComments();
   });
   // --------------------Get inputs & into variable: newObj---------
@@ -107,19 +108,20 @@ itemForm.addEventListener("submit", function (event) {
   let newAvatar = document.getElementsByClassName("section-form__image")[0].src;
   const newDate = new Date().toLocaleDateString();
   let newObj = {
-    author: newName,
+    name: newName,
     comment: newComment,
-    date: newDate,
+    timestamp: newDate,
     src: newAvatar,
   };
-  commentContent.push(newObj);
+  newCommentContent.push(newObj);
 
   // ------------------SORT ARRAY-------------------------------------------------
-  commentContent.sort((a, b) => new Date(b.date) - new Date(a.date));
-  // console.log(commentContent);
-
+  newCommentContent.sort(
+    (a, b) => new Date(b.timestamp) - new Date(a.timestamp)
+  );
+  console.log(newCommentContent);
   // // ------------------APPLY CODE FOR NEW ARRAY COMMENTCONTENT-------------------------------------------------
-  commentContent.forEach((element) => {
+  newCommentContent.forEach((element) => {
     addCard(element);
     // console.log(element);
     // console.log(addCard(element));
