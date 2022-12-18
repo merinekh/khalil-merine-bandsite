@@ -185,7 +185,6 @@ p {
   height: -moz-fit-content;
   height: fit-content;
   display: flex;
-  height: 35vh;
 }
 @media screen and (min-width: 768px) {
   .main {
