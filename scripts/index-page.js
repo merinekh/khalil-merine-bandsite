@@ -48,7 +48,7 @@ addCard = (element) => {
   );
   const formLine = createElementWithClass("hr", "section-form__line");
 
-  formCommentsImage.alt = "Profile-Img";
+  // formCommentsImage.alt = "Profile-Img";
 
   formProfile.appendChild(formProfileName);
   formProfile.appendChild(formProfileDate);
@@ -62,10 +62,12 @@ addCard = (element) => {
   form.appendChild(formComments);
   form.appendChild(formLine);
 
+  let ts = new Date(element.timestamp);
   formProfileName.innerText = element.name;
-  formProfileDate.innerHTML = element.timestamp;
+  formProfileDate.innerHTML = ts.toLocaleDateString();
   formComment.innerHTML = element.comment;
   formCommentsImage.src = element.src;
+  console.log(element.timestamp);
 };
 
 // ------PASSING THRU EACH ELEMENT OF THE COMMENTCONTENT ARRAY------
