@@ -83,18 +83,6 @@ function addShowCard(element) {
   const sectionLocation = createElementWithClass("p", "section__location");
   const sectionButton = createElementWithClass("input", "section-button");
   const sectionLine = createElementWithClass("hr", "section__line");
-  const sectionHeaderDateSubtitle = createElementWithClass(
-    "p",
-    "section-header-date__subtitle"
-  );
-  const sectionHeaderVenueSubtitle = createElementWithClass(
-    "p",
-    "section-header-venue__subtitle"
-  );
-  const sectionHeaderLocationSubtitle = createElementWithClass(
-    "p",
-    "section-header-location__subtitle"
-  );
 
   sectionHeaderDateSubtitle.innerHTML = "DATE";
   sectionHeaderVenueSubtitle.innerHTML = "VENUE";
@@ -109,10 +97,6 @@ function addShowCard(element) {
   sectionButton.classList.add("button");
   sectionButton.type = "button";
   sectionButton.value = "BUY TICKETS";
-
-  sectionHeader.appendChild(sectionHeaderDateSubtitle);
-  sectionHeader.appendChild(sectionHeaderVenueSubtitle);
-  sectionHeader.appendChild(sectionHeaderLocationSubtitle);
 
   sectionDates.appendChild(sectionDateSubtitle);
   sectionDates.appendChild(sectionDate);
@@ -149,3 +133,18 @@ const sectionSubtitle = document.getElementsByClassName("section__subtitle");
 
 // sectionSubtitle.setAttribute("style", "color : $color--primary--silver");
 // sectionSubtitle.style.color = "$color--primary--silver";
+const sectionHeaderDateSubtitle = createElementWithClass(
+  "p",
+  "section-header-date__subtitle"
+);
+const sectionHeaderVenueSubtitle = createElementWithClass(
+  "p",
+  "section-header-venue__subtitle"
+);
+const sectionHeaderLocationSubtitle = createElementWithClass(
+  "p",
+  "section-header-location__subtitle"
+);
+sectionHeader.appendChild(sectionHeaderDateSubtitle);
+sectionHeader.appendChild(sectionHeaderVenueSubtitle);
+sectionHeader.appendChild(sectionHeaderLocationSubtitle);

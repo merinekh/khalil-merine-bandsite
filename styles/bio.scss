@@ -84,8 +84,7 @@
   height: 40vh;
 
   @include tablet {
-    height: 50vh;
-    background-position: cover;
+    height: 70vh;
   }
 
   &-hero {
@@ -96,11 +95,14 @@
       align-items: center;
       background-image: linear-gradient(
           rgba($color--primary-black, 0.5) 0%,
-          rgba($color--primary-black, 0.5) 80%
+          rgba($color--primary-black, 0.5) 100%
         ),
         url(../assets/images/hero-bio.jpg);
       background-size: cover;
-      background-position-x: 100%;
+
+      @include tablet {
+        background-position: 0 50%;
+      }
     }
   }
 
@@ -142,6 +144,9 @@
   &__subtitle {
     font-weight: 600;
     margin: 1.6rem 0;
+    @include desktop {
+      width: 85%;
+    }
   }
 
   &__subtitle--gray {
@@ -152,6 +157,10 @@
   &-down__title {
     font-weight: 600;
     font-size: 1.4rem;
+    @include desktop {
+      font-size: 1.9rem;
+      margin: 0;
+    }
   }
 
   @include tablet {
@@ -159,8 +168,18 @@
 
     &-up,
     &-down {
-      margin-left: 3.6rem;
-      margin-right: 1.6rem;
+      margin: 0 6rem;
+    }
+    &__image {
+      max-height: 60vh;
+      padding-right: 2rem;
+    }
+    &-up {
+      display: flex;
+      flex-direction: column;
+      img {
+        align-self: center;
+      }
     }
 
     &-text {
@@ -178,7 +197,9 @@
       margin: 0;
       width: 90%;
     }
-
+    &__subtitle {
+      margin: 1.2rem 0;
+    }
     &-up {
       &__title {
         font-size: 2.4rem;
@@ -239,6 +260,7 @@
     }
   }
 }
+
 .section-form {
   padding: 1.6rem;
   &-main {
@@ -302,7 +324,7 @@
     display: flex;
 
     &__image {
-      background-color: $color--primary-silver;
+      background-color: $color--secondary-silver;
       width: 5rem;
       height: 5rem;
       border-radius: 50%;
@@ -335,6 +357,11 @@
       width: 80%;
       margin-left: 10rem;
     }
+
+    &-inputs__button {
+      width: 33%;
+      align-self: flex-end;
+    }
   }
 
   @include desktop {
@@ -346,6 +373,7 @@
     }
   }
 }
+
 .footer {
   display: flex;
   flex-direction: column;
@@ -365,29 +393,33 @@
     }
   }
 
-  &-cards div {
-    padding: 1.6rem 0 0 0;
+  &-card {
+    margin: 1.6rem 0 0 0;
   }
-  &__image {
-    margin-top: 3.6rem;
+  &-bottom-image {
+    margin-top: 5.7rem;
   }
-
   @include tablet {
     display: flex;
     padding: 2.4rem;
     flex-direction: column;
     position: relative;
     font-size: 1.3rem;
-
+    &-card {
+      margin: 1.6rem 2.4rem 0 0;
+    }
     &-up {
       display: flex;
       justify-content: flex-start;
       align-items: center;
       width: 100%;
-
       &-image {
         display: flex;
+        margin-left: 18.4rem;
       }
+    }
+    &-up div {
+      width: 20%;
     }
 
     &__title {
@@ -396,8 +428,8 @@
     }
 
     &-social {
-      margin-left: 9rem;
-      margin-right: 15rem;
+      margin-left: 6.8rem;
+
       img {
         width: 2.4rem;
         height: 2.4rem;
@@ -406,7 +438,6 @@
 
     &-cards {
       display: flex;
-      justify-content: space-between;
       align-items: baseline;
     }
 
@@ -414,17 +445,21 @@
       display: flex;
       flex-direction: column;
       align-items: baseline;
-      margin-right: 2rem;
+      width: 30%;
       &__name {
         font-size: 1.3rem;
+        line-height: 2rem;
       }
       &__email {
-        margin: 2rem 0;
+        margin: 1.6rem 0;
       }
     }
 
     &-bottom-image {
       display: none;
+    }
+    &__copy {
+      margin-top: 2.4rem;
     }
   }
 
@@ -433,15 +468,16 @@
 
     &-up {
       width: 100%;
+      & > * {
+        width: 20%;
+      }
+      &-image {
+        margin-left: 47.4rem;
+      }
     }
 
     &-social {
-      margin-left: 11rem;
-      margin-right: 52rem;
-    }
-
-    &-image {
-      padding-right: 5%;
+      margin-left: 7.8rem;
     }
 
     &-cards {

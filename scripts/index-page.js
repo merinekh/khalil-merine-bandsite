@@ -60,6 +60,7 @@ addCard = (element) => {
   formComments.appendChild(formCommentsImage);
   formComments.appendChild(formCommentsInputs);
   // console.log(formComments);
+
   form.appendChild(formComments);
   form.appendChild(formLine);
 
@@ -126,4 +127,21 @@ itemForm.addEventListener("submit", function (event) {
     // console.log(element);
     // console.log(addCard(element));
   });
+
+  // -----------------------------WEB API----------------------------
+  const newApi = `${usersURL}${myPage[0]}${myKey}`;
+  // console.log(api);
+  // const CommentPost = axios
+  //   .post(newApi, JSON.stringify(newObj))
+  //   .then((response) => {
+  //     console.log("New Comment Added");
+  //   })
+  //   .catch((error) => {
+  //     console.log(error);
+  //   });
 });
+// console.log(CommentContent);
+// ----------------------------------------------------------------
+// const formLine = createElementWithClass("hr", "section-form__line");
+// form.prepend(formLine);
+console.log(form);
